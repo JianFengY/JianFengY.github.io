@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #da05b4;
+  background: #9d93ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2926,4 +2926,13 @@ hr {
   background-color: transparent;
   border: none;
   border-left: 1px solid #ddd;
+}
+#container button.wf-write-btn span {
+  color: #f00;
+}
+#container button.wf-write-btn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid #ddd;
+  height: 34px;
 }
