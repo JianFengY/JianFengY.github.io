@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,JDK,Tomcat," />
+  <meta name="keywords" content="Python,Scrapy,爬虫," />
 
 
 
@@ -84,18 +84,21 @@
 
 
 
-<meta name="description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
-<meta name="keywords" content="Ubuntu,JDK,Tomcat">
+<meta name="description" content="Scrapy库从安装到入门小例子">
+<meta name="keywords" content="Python,Scrapy,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
-<meta property="og:url" content="http://yoursite.com/2018/02/09/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/index.html">
+<meta property="og:title" content="Python爬虫Scrapy入门篇">
+<meta property="og:url" content="https://jianfengy.github.io/Python/爬虫/Python爬虫Scrapy入门篇/index.html">
 <meta property="og:site_name" content="麻瓜码农">
-<meta property="og:description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
+<meta property="og:description" content="Scrapy库从安装到入门小例子">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-09T07:27:05.724Z">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%BD%91%E9%A1%B5%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%88%AC%E8%99%AB%E7%BB%93%E6%9E%9C.png">
+<meta property="og:updated_time" content="2018-02-09T20:41:35.192Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
-<meta name="twitter:description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
+<meta name="twitter:title" content="Python爬虫Scrapy入门篇">
+<meta name="twitter:description" content="Scrapy库从安装到入门小例子">
+<meta name="twitter:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%BD%91%E9%A1%B5%E7%BB%93%E6%9E%84.png">
 
 
 
@@ -105,7 +108,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/09/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/"/>
+  <link rel="canonical" href="https://jianfengy.github.io/Python/爬虫/Python爬虫Scrapy入门篇/"/>
 
 
 
 
 
-  <title>Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑 | 麻瓜码农</title>
+  <title>Python爬虫Scrapy入门篇 | 麻瓜码农</title>
   
 
 
@@ -303,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/">
+    <link itemprop="mainEntityOfPage" href="https://jianfengy.github.io/Python/爬虫/Python爬虫Scrapy入门篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeff Yang">
@@ -320,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑</h1>
+          <h1 class="post-title" itemprop="name headline">Python爬虫Scrapy入门篇</h1>
         
 
         <div class="post-meta">
@@ -332,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T02:08:00+08:00">
-                2018-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T00:14:00+08:00">
+                2018-02-10
               </time>
             
 
@@ -355,8 +358,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
                   </a>
                 </span>
 
@@ -372,7 +386,7 @@
 
           
           
-             <span id="/2018/02/09/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/" class="leancloud_visitors" data-flag-title="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
+             <span id="/Python/爬虫/Python爬虫Scrapy入门篇/" class="leancloud_visitors" data-flag-title="Python爬虫Scrapy入门篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -397,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  503
+                  1,294
                 </span>
               
 
@@ -413,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -421,7 +435,7 @@
 
           
               <div class="post-description">
-                  本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程
+                  Scrapy库从安装到入门小例子
               </div>
           
 
@@ -438,13 +452,31 @@
       
 
       
-        <p>之前买了阿里云的Ubuntu服务器，安装JDK、MySQL和Tomcat的时候遇到了一些问题，折腾了挺长时间，这里是一些记录。</p>
-<h3 id="安装配置JDK"><a href="#安装配置JDK" class="headerlink" title="安装配置JDK"></a>安装配置JDK</h3><p>windows上下载的<code>jdk-8u161-linux-i586.tar.gz</code>用xshell执行<code>rz</code>命令上传到阿里云的ubuntu，然后执行<code>mkdir /usr/java</code>建一个文件夹，再执行<code>tar zxvf jdk-8u161-linux-i586.tar.gz -C /usr/java</code>解压到java目录下，<br>之后执行<code>vim ~/.bashrc</code>在文件尾添加以下内容设置环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_151</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:&#123;JAVA_HOME&#125;/lib:&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=&#123;JAVA_HOME&#125;/bin:PATH</span><br></pre></td></tr></table></figure></p>
-<p>这里遇到了报错<code>-bash: java/ jdk1.8.0_131/bin/java: cannot execute binary file</code>，是因为我下载的JDK是64位的，而ubuntu是32位的…使用<code>getconf LONG_BIT</code>命令可以查看linux位数。</p>
-<h3 id="安装配置Mysql"><a href="#安装配置Mysql" class="headerlink" title="安装配置Mysql"></a>安装配置Mysql</h3><p>安装时有遇到<code>Err http://mirrors.aliyun.com/ubuntu 404 Not Found</code>，执行<code>sudo apt-get update</code>就可以了。</p>
-<p>网上学到的一个技巧：如果忘记了MySQL账户的密码，文件<code>/etc/mysql/debian.cnf</code>里有个MySQL用户<code>debian-sys-maint</code>。可以<code>mysql -u debian-sys-maint -p</code>使用文件提供的密码登录MySQL修改root的密码。</p>
-<p>修改MySQL密码时因为设置的密码过于简单会报错<code>Your password does not satisfy the current policy requirements</code>，处理如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;</span><br><span class="line">ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</span><br><span class="line"></span><br><span class="line">mysql&gt; set global validate_password_policy=0;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; set global validate_password_length=4;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;</span><br><span class="line">Query OK, 1 row affected, 1 warning (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 1</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装配置tomcat"><a href="#安装配置tomcat" class="headerlink" title="安装配置tomcat"></a>安装配置tomcat</h3><p>安装运行之后不能使用外网访问，执行<code>ufw allow 8080</code>允许外网可以访问8080端口<br>然后配置阿里云安全组，找到自己的实例，点击<strong>更多</strong>-<strong>安全组配置</strong>-<strong>配置规则</strong>-<strong>添加安全组规则</strong>配置<strong>端口范围</strong><code>8080/8080</code>，<strong>授权对象</strong><code>0.0.0.0/0</code>之后就可以了。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为Python简单灵活的特点，一直是写爬虫的热门语言，我之前也在公众号上分享过几篇简单的爬虫例子和教程。</p>
+<p>Scrapy是一款简单高效的Python网络爬虫框架，使用框架，我们就可以只关注数据的提取而不用去自己造轮子了。其实，对于这个框架，我也是个新手…这里，就用我们学校的图书馆系统做个简单的入门项目了。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先说一下我的Python是3.6版本的，电脑是win10。</p>
+<p>Scrapy也可以直接用使用<code>pip</code>命令安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>因为Scrapy依赖了其他一些包，所以会额外安装一些库，如<code>lxml</code>、<code>Twisted</code>和<code>pyOpenSSL</code>等，这在文档也有提到。我在安装这些库时有遇到一个问题，报了下面这个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command &quot;&quot;d:\program files\python3.6.1\python.exe&quot; -u -c &quot;import setuptools, tokenize;__file__=&apos;C:\\Users\\ASUS\\AppData\\Local\\Temp\\pip-build-qkm97m8f\\Twisted\\setup.py&apos;;f=getattr(tokenize, &apos;open&apos;, open)(__file__);code=f.read().replace(&apos;\r\n&apos;, &apos;\n&apos;);f.close();exec(compile(code, __file__, &apos;exec&apos;))&quot; install --record C:\Users\ASUS\AppData\Local\Temp\pip-e4cf8gml-record\install-record.txt --single-version-externally-managed --compile&quot; failed with error code 1 in C:\Users\ASUS\AppData\Local\Temp\pip-build-qkm97m8f\Twisted\</span><br></pre></td></tr></table></figure></p>
+<p>可以看到是安装<code>Twisted</code>出的问题，解决方法是在 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted" target="_blank" rel="noopener">这里</a> 下载对应版本的whl包，我的是<code>Twisted-17.9.0-cp36-cp36m-win32.whl</code>，<code>cp</code>后面是Python版本，<code>win32</code>表示位数，我的Python是32位的。</p>
+<p>然后切换到下载目录运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Twisted-17.9.0-cp36-cp36m-win32.whl</span><br></pre></td></tr></table></figure></p>
+<p>然后再安装Scrapy就可以了。你会看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Successfully installed PyDispatcher-2.0.5 asn1crypto-0.24.0 cffi-1.11.4 cryptography-2.1.4 cssselect-1.0.3 parsel-1.4.0 pyOpenSSL-17.5.0 pyasn1-0.4.2 pyasn1-modules-0.2.1 pycparser-2.18 queuelib-1.4.2 scrapy-1.5.0 service-identity-17.0.0</span><br></pre></td></tr></table></figure></p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>切换到你想放这个项目的目录，执行<code>scrapy startproject projectname</code>创建一个项目，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject scrapy_test</span><br></pre></td></tr></table></figure></p>
+<p>生成的项目结构是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scrapy_test/</span><br><span class="line">    scrapy.cfg            # deploy configuration file</span><br><span class="line">    scrapy_test/             # project&apos;s Python module, you&apos;ll import your code from here</span><br><span class="line">        __init__.py</span><br><span class="line">        items.py          # project items definition file</span><br><span class="line">        middlewares.py    # project middlewares file</span><br><span class="line">        pipelines.py      # project pipelines file</span><br><span class="line">        settings.py       # project settings file</span><br><span class="line">        spiders/          # a directory where you&apos;ll later put your spiders</span><br><span class="line">            __init__.py</span><br></pre></td></tr></table></figure></p>
+<p><code>spiders</code>目录用于放置我们的爬虫，<code>items.py</code>用于定义我们要获取的数据，<code>pipelines.py</code>定义存储，<code>settings.py</code>顾名思义就是配置文件了。</p>
+<h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><p><img src="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%BD%91%E9%A1%B5%E7%BB%93%E6%9E%84.png" alt="图书馆网页"></p>
+<hr>
+<p>第一步我们先定义要存储什么字段，这里就定义书名、作者和索引号吧，编写<code>items.py</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class BooksItem(scrapy.Item):</span><br><span class="line">    &apos;&apos;&apos;定义要存储的字段&apos;&apos;&apos;</span><br><span class="line">    # 书名</span><br><span class="line">    name = scrapy.Field()</span><br><span class="line">    # 作者</span><br><span class="line">    author = scrapy.Field()</span><br><span class="line">    # 索引号</span><br><span class="line">    call_number = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们在<code>spiders</code>目录下编写爬虫文件，我这里新建一个<code>books_spider.py</code>文件，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from scrapy_test.items import BooksItem</span><br><span class="line"></span><br><span class="line">class BooksSpider(scrapy.Spider):</span><br><span class="line">    &apos;&apos;&apos;图书爬虫类&apos;&apos;&apos;</span><br><span class="line">    # 这个name不能重复</span><br><span class="line">    name = &apos;books&apos;</span><br><span class="line">    # allowed_domains = [&apos;202.116.174.108:8080&apos;]</span><br><span class="line">    start_urls = [&quot;http://202.116.174.108:8080/top/top_lend.php?cls_no=ALL&quot;]</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        &apos;&apos;&apos;处理下载的response的默认方法&apos;&apos;&apos;</span><br><span class="line">        books = []</span><br><span class="line">        for item in response.xpath(&apos;//tr&apos;)[1:]:</span><br><span class="line">            book = BooksItem()</span><br><span class="line">            book_name = item.xpath(&apos;td[2]/a/text()&apos;).extract()</span><br><span class="line">            book_author = item.xpath(&apos;td[3]/text()&apos;).extract()</span><br><span class="line">            book_call_number = item.xpath(&apos;td[5]/text()&apos;).extract()</span><br><span class="line">            book[&apos;name&apos;] = book_name[0]</span><br><span class="line">            book[&apos;author&apos;] = book_author[0]</span><br><span class="line">            book[&apos;call_number&apos;] = book_call_number[0]</span><br><span class="line">            books.append(book)</span><br><span class="line">        return books</span><br></pre></td></tr></table></figure></p>
+<p>这个类继承<code>scrapy.Spider</code>，需要指定<code>name</code>，它是运行爬虫用的，<code>start_urls</code>是要爬取的url列表，<code>parse</code>函数接收获取到的<code>response</code>解析用的是scrapy自带的<code>xpath</code>,这个网页的结构很简单，所以就不多解释了。总之，就是遍历每一本书的信息，然后存在<code>books</code>中。这些信息在之前的item中已经定义了。<br>代码的编写到这里就结束了，接下来就可以运行了。</p>
+<h3 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h3><p>要运行代码，切换到项目的目录里，执行下面的命令，其中<code>books</code>就是上面的<code>name</code>，<code>books.json</code>就是生成的json文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl books -o books.json -t json</span><br></pre></td></tr></table></figure></p>
+<p>开始运行时，出现了一个问题，就是没报错，但没有结果，输出一片空白，然后发现下面的提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEBUG: Forbidden by robots.txt</span><br></pre></td></tr></table></figure></p>
+<p>这是因为要获取的页面在robots中被禁止了，所以Scrapy自动忽略了，只需修改<code>settings.py</code>将：<code>ROBOTSTXT_OBEY</code>改为<code>False</code>就行了。</p>
+<p>后来又遇到了乱码的问题，输出全是<code>\uxxx</code>这种字符，只要在<code>settings.py</code>加上<code>FEED_EXPORT_ENCODING = &#39;utf-8&#39;</code>就可以。</p>
+<p>没报错执行完上面的命令之后就会在根目录生成一个<code>books.json</code>文件，打开，就会看到保存下来的json格式图书信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;暗恋·橘生淮南&quot;,</span><br><span class="line">    &quot;author&quot;: &quot;八月长安[著]&quot;,</span><br><span class="line">    &quot;call_number&quot;: &quot;I247.57/5494&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;Time series and panel data econometrics / First edition.&quot;,</span><br><span class="line">    &quot;author&quot;: &quot;M. Hashem Pesaran.&quot;,</span><br><span class="line">    &quot;call_number&quot;: &quot;F224.0/EN4&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;杀死一只知更鸟.第2版&quot;,</span><br><span class="line">    &quot;author&quot;: &quot;(美国) 哈珀·李著&quot;,</span><br><span class="line">    &quot;call_number&quot;: &quot;I712.45/1231=2&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;众筹:互联网金融的下一个风口&quot;,</span><br><span class="line">    &quot;author&quot;: &quot;陈晓暾, 白帆, 陈英编著&quot;,</span><br><span class="line">    &quot;call_number&quot;: &quot;F830.45/77&quot;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%88%AC%E8%99%AB%E7%BB%93%E6%9E%9C.png" alt="结果"></p>
+<hr>
+<p>我们的Scrapy入门项目就完成了！</p>
 
       
     </div>
@@ -462,11 +494,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/JDK/" rel="tag"><i class="fa fa-tag"></i> JDK</a>
+            <a href="/tags/Scrapy/" rel="tag"><i class="fa fa-tag"></i> Scrapy</a>
           
-            <a href="/tags/Tomcat/" rel="tag"><i class="fa fa-tag"></i> Tomcat</a>
+            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
           
         </div>
       
@@ -479,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/07/MySql学习笔记/" rel="next" title="MySql学习笔记">
-                <i class="fa fa-chevron-left"></i> MySql学习笔记
+              <a href="/Hexo/Hexo+GitHub搭建个人博客/" rel="next" title="GitHub+Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> GitHub+Hexo搭建个人博客
               </a>
             
           </div>
@@ -489,8 +521,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/09/Hexo+GitHub搭建个人博客/" rel="prev" title="GitHub+Hexo搭建个人博客">
-                GitHub+Hexo搭建个人博客 <i class="fa fa-chevron-right"></i>
+              <a href="/Hexo/Hexo主题Next美化/" rel="prev" title="Hexo博客设置以及Next主题美化">
+                Hexo博客设置以及Next主题美化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -577,7 +609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置JDK"><span class="nav-number">1.</span> <span class="nav-text">安装配置JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置Mysql"><span class="nav-number">2.</span> <span class="nav-text">安装配置Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置tomcat"><span class="nav-number">3.</span> <span class="nav-text">安装配置tomcat</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建项目"><span class="nav-number">3.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写代码"><span class="nav-number">4.</span> <span class="nav-text">编写代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行代码"><span class="nav-number">5.</span> <span class="nav-text">运行代码</span></a></li></ol></div>
             
 
           </div>
@@ -696,7 +728,7 @@
     
       <span class="post-meta-item-text">全站文章字数总计&#58;</span>
     
-    <span title="全站文章字数总计">9.1k</span>
+    <span title="全站文章字数总计">11.1k</span>
   
 </div>
 
@@ -740,6 +772,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
