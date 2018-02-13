@@ -92,7 +92,7 @@
 <meta name="keywords" content="Python,Scrapy,爬虫,Fiddler">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fiddler分析手机App请求Scrapy爬虫">
-<meta property="og:url" content="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/index.html">
+<meta property="og:url" content="https://jianfengy.github.io/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/index.html">
 <meta property="og:site_name" content="麻瓜码农">
 <meta property="og:description" content="Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。 这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。 准备环境 Python，我用的是3.6，系统是win10 Scrapy框架，安装过程我之前的文章提过 Fiddler，点击这里下载安装 手机…我的是安卓 一个">
 <meta property="og:locale" content="zh-Hans">
@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E7%82%B9%E5%BC%80%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E6%8E%A7%E5%88%B6%E9%A1%B5%E7%A0%81%E7%9A%84%E5%8F%82%E6%95%B0.png">
 <meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/bilibili%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%A4%B9.png">
-<meta property="og:updated_time" content="2018-02-13T18:00:05.466Z">
+<meta property="og:updated_time" content="2018-02-13T18:37:40.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fiddler分析手机App请求Scrapy爬虫">
 <meta name="twitter:description" content="Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。 这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。 准备环境 Python，我用的是3.6，系统是win10 Scrapy框架，安装过程我之前的文章提过 Fiddler，点击这里下载安装 手机…我的是安卓 一个">
@@ -144,7 +144,7 @@
 
 
 
-  <link rel="canonical" href="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/"/>
+  <link rel="canonical" href="https://jianfengy.github.io/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/"/>
 
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/">
+    <link itemprop="mainEntityOfPage" href="https://jianfengy.github.io/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeff Yang">
@@ -402,7 +402,7 @@
 
           
           
-             <span id="/Python/爬虫/ython使用Fiddler手机App爬虫/" class="leancloud_visitors" data-flag-title="Fiddler分析手机App请求Scrapy爬虫">
+             <span id="/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/" class="leancloud_visitors" data-flag-title="Fiddler分析手机App请求Scrapy爬虫">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,015
+                  1,100
                 </span>
               
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -483,7 +483,8 @@
 <p>接下来是<code>pipelines.py</code>，这段代码改自官方文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from scrapy.pipelines.images import ImagesPipeline</span><br><span class="line">from scrapy.exceptions import DropItem</span><br><span class="line">from scrapy.utils.project import get_project_settings</span><br><span class="line"></span><br><span class="line">class ScrapyBilibiliPipeline(ImagesPipeline):</span><br><span class="line">    IMAGES_STORE = get_project_settings().get(&apos;IMAGES_STORE&apos;)</span><br><span class="line">    </span><br><span class="line">    def get_media_requests(self, item, info):</span><br><span class="line">        image_url = item[&apos;image_urls&apos;]</span><br><span class="line">        yield scrapy.Request(image_url)</span><br><span class="line">    </span><br><span class="line">    def item_completed(self, results, item, info):</span><br><span class="line">        image_paths = [x[&apos;path&apos;] for ok, x in results if ok]</span><br><span class="line">        if not image_paths:</span><br><span class="line">            raise DropItem(&quot;Item contains no images&quot;)</span><br><span class="line">        item[&apos;image_paths&apos;] = image_paths</span><br><span class="line">        return item</span><br></pre></td></tr></table></figure></p>
 <p>最后在<code>spiders</code>文件夹里新建<code>bilibili_spider.py</code>放置爬虫的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">import scrapy</span><br><span class="line">from scrapy_bilibili.items import ScrapyBilibiliItem</span><br><span class="line"></span><br><span class="line">class BilibiliSpider(scrapy.Spider):</span><br><span class="line">    name = &apos;bilibili_spider&apos;</span><br><span class="line">    allowed_domains = [&apos;api.vc.bilibili.com&apos;]</span><br><span class="line">    page_num = 0</span><br><span class="line">    start_urls = [&apos;http://api.vc.bilibili.com/link_draw/v2/Doc/...&amp;page_num=&apos; + str(page_num) + &apos;&amp;page_size=20...&apos;]  # 链接太长我就不放完整了</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        datas = json.loads(response.text)[&apos;data&apos;][&apos;items&apos;]</span><br><span class="line">        for data in datas:</span><br><span class="line">            item = ScrapyBilibiliItem()</span><br><span class="line">            for img in data[&apos;item&apos;][&apos;pictures&apos;]:</span><br><span class="line">                item[&apos;image_urls&apos;] = img[&apos;img_src&apos;]</span><br><span class="line">                yield item</span><br><span class="line">        if self.page_num &gt;= 10:</span><br><span class="line">            return</span><br><span class="line">        self.page_num += 1</span><br><span class="line">        yield scrapy.Request(&apos;http://api.vc.bilibili.com/link_draw/v2/Doc/...&amp;page_num=&apos; + str(self.page_num) + &apos;&amp;page_size=20...&apos;, callback = self.parse)  # 链接也是不完整的</span><br></pre></td></tr></table></figure></p>
 <h3 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h3><p>在项目的目录下执行以下命令，<strong>注意</strong><code>bilibili_spider</code>是<code>bilibili_spider.py</code>里<code>class</code>的<code>name</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl bilibili_spider</span><br></pre></td></tr></table></figure></p>
-<p>然后，等到运行完，就能看到结果了：<br><img src="http://p3vld0dkf.bkt.clouddn.com/bilibili%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="结果"></p>
+<p>然后，等到运行完，就能看到结果了，图片是使用它们URL的 SHA1 hash 作为文件名的：<br><img src="http://p3vld0dkf.bkt.clouddn.com/bilibili%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="结果"></p>
+<p>对了，这里要注意一个问题，运行的时候如果有挂代理，比如一些科学^_^上网的工具什么的就先关掉吧，不然可能会出现以下问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection to the other side was lost in a non-clean fashion: Connection lost.</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>到这里，我们的程序就完成了。</p>
 
@@ -741,7 +742,7 @@
     
       <span class="post-meta-item-text">全站文章字数总计&#58;</span>
     
-    <span title="全站文章字数总计">12.4k</span>
+    <span title="全站文章字数总计">12.5k</span>
   
 </div>
 
