@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,Scrapy,爬虫,Fiddler," />
 
 
 
@@ -88,16 +88,33 @@
 
 
 
-<meta name="description" content="一个麻瓜码农的随笔">
-<meta property="og:type" content="website">
-<meta property="og:title" content="麻瓜码农">
-<meta property="og:url" content="https://jianfengy.github.io/archives/2018/02/index.html">
+<meta name="description" content="Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。 这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。 准备环境 Python，我用的是3.6，系统是win10 Scrapy框架，安装过程我之前的文章提过 Fiddler，点击这里下载安装 手机…我的是安卓 一个">
+<meta name="keywords" content="Python,Scrapy,爬虫,Fiddler">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fiddler分析手机App请求Scrapy爬虫">
+<meta property="og:url" content="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/index.html">
 <meta property="og:site_name" content="麻瓜码农">
-<meta property="og:description" content="一个麻瓜码农的随笔">
+<meta property="og:description" content="Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。 这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。 准备环境 Python，我用的是3.6，系统是win10 Scrapy框架，安装过程我之前的文章提过 Fiddler，点击这里下载安装 手机…我的是安卓 一个">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/fiddler%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E6%9F%A5%E7%9C%8Bip.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%861.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%862.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%E8%AF%81%E4%B9%A6.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%AE%89%E8%A3%85%E6%AD%A4%E8%AF%81%E4%B9%A6%E5%88%B0%E6%89%8B%E6%9C%BA.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%AE%89%E8%A3%85%E5%AE%8C%E8%AF%81%E4%B9%A6.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E9%80%89%E6%8B%A9%E7%9B%B8%E7%B0%BF.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/fiddler%E6%9F%A5%E7%9C%8B%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E7%82%B9%E5%BC%80%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/%E6%8E%A7%E5%88%B6%E9%A1%B5%E7%A0%81%E7%9A%84%E5%8F%82%E6%95%B0.png">
+<meta property="og:image" content="http://p3vld0dkf.bkt.clouddn.com/bilibili%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%A4%B9.png">
+<meta property="og:updated_time" content="2018-02-13T17:57:13.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="麻瓜码农">
-<meta name="twitter:description" content="一个麻瓜码农的随笔">
+<meta name="twitter:title" content="Fiddler分析手机App请求Scrapy爬虫">
+<meta name="twitter:description" content="Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。 这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。 准备环境 Python，我用的是3.6，系统是win10 Scrapy框架，安装过程我之前的文章提过 Fiddler，点击这里下载安装 手机…我的是安卓 一个">
+<meta name="twitter:image" content="http://p3vld0dkf.bkt.clouddn.com/fiddler%E9%85%8D%E7%BD%AE.png">
 
 
 
@@ -127,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="https://jianfengy.github.io/archives/2018/02/"/>
+  <link rel="canonical" href="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/"/>
 
 
 
 
 
-  <title>归档 | 麻瓜码农</title>
+  <title>Fiddler分析手机App请求Scrapy爬虫 | 麻瓜码农</title>
   
 
 
@@ -152,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/JianFengY" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -291,259 +308,255 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jianfengy.github.io/Python/爬虫/ython使用Fiddler手机App爬虫/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeff Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="麻瓜码农">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Fiddler分析手机App请求Scrapy爬虫</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T13:52:00+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 6 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/Python/爬虫/ython使用Fiddler手机App爬虫/" class="leancloud_visitors" data-flag-title="Fiddler分析手机App请求Scrapy爬虫">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Python/爬虫/ython使用Fiddler手机App爬虫/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Fiddler分析手机App请求Scrapy爬虫</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,015
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-13T13:52:00+08:00"
-              content="2018-02-13" >
-          02-13
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Hexo/Hexo主题Next美化/" itemprop="url">
-              
-                <span itemprop="name">Hexo博客设置以及Next主题美化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-10T14:20:00+08:00"
-              content="2018-02-10" >
-          02-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Python/爬虫/Python爬虫Scrapy入门篇/" itemprop="url">
-              
-                <span itemprop="name">Python爬虫Scrapy入门篇</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-10T00:14:00+08:00"
-              content="2018-02-10" >
-          02-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>Fiddler是一款十分强大的调试代理工具，这个工具我就不详细介绍了。简单来说，它是通过创建代理，拦截http请求用于分析或修改。</p>
+<p>这里就演示一下用Fiddler抓取手机端Bilibili的请求并使用Scrapy编写一个爬取图片的爬虫程序。</p>
+<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ul>
+<li>Python，我用的是3.6，系统是win10</li>
+<li>Scrapy框架，安装过程我之前的文章提过</li>
+<li>Fiddler，<a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">点击这里</a>下载安装</li>
+<li>手机…我的是安卓</li>
+<li>一个安卓软件，我这里就用Bilibili示范</li>
+</ul>
+<h3 id="Fiddler配置"><a href="#Fiddler配置" class="headerlink" title="Fiddler配置"></a>Fiddler配置</h3><p>安装我就不说了，说说配置，<code>Tools - Connections</code>这里可以看到默认端口号是很吉利的<code>8888</code>。这里要勾上<code>Allow remote computers to connect</code>。<br><img src="http://p3vld0dkf.bkt.clouddn.com/fiddler%E9%85%8D%E7%BD%AE.png" alt="fidder配置"><br>然后要让<strong>手机和电脑</strong>连接上<strong>同一个网络</strong>，并给手机设置<strong>代理IP</strong>，设置成电脑的IP地址，cmd执行命令<code>ipconfig</code>可以查看ip：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E6%9F%A5%E7%9C%8Bip.png" alt="查看IP"><br>手机连接上wifi后，选择<code>代理设置</code>，<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%861.png" alt="代理设置1"><br>把服务器设置成刚才看到的IP地址，端口号如果没改的话就是<code>8888</code>，然后保存。<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%862.png" alt="代理设置2"><br>下面是给手机安装证书，不安装<strong>可能</strong>会出现手机设置了代理无法上网的问题。</p>
+<p>然后手机浏览器访问<code>ip地址:8888</code>，下载证书安装：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%E8%AF%81%E4%B9%A6.png" alt="下载证书"><br>打开<code>设置 - 安全 - 设备管理与凭证 - 从存储盘安装</code>，差不多都是这个地方，找找应该能找到…<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E5%AE%89%E8%A3%85%E6%AD%A4%E8%AF%81%E4%B9%A6%E5%88%B0%E6%89%8B%E6%9C%BA.png" alt="安装此证书"><br>安装完后可以在<code>用户凭证</code>可以看到：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E5%AE%89%E8%A3%85%E5%AE%8C%E8%AF%81%E4%B9%A6.png" alt="安装完"></p>
+<h3 id="分析请求"><a href="#分析请求" class="headerlink" title="分析请求"></a>分析请求</h3><p>接下来就可以打开Fiddler还有手机端的Bilibili，进行分析了。我这里选择<code>相簿</code>，准备爬取里面的图片。<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E9%80%89%E6%8B%A9%E7%9B%B8%E7%B0%BF.png" alt="选择相簿"><br>下面的精选热推就是我们的目标：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0.png" alt="下拉刷新"><br>刷新手机的时候，可以看到Fiddler界面出现了请求的链接返回的是json数据：<br><img src="http://p3vld0dkf.bkt.clouddn.com/fiddler%E6%9F%A5%E7%9C%8B%E7%BB%93%E6%9E%9C.png" alt="fiddler查看结果"><br>复制链接到浏览器打开就可以看到图片地址了：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80.png" alt="图片地址"><br>点开这个地址，可以看到刚才手机端显示的那张图片：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E7%82%B9%E5%BC%80%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80.png" alt="图片"><br>接下来手机端往下拉，在Fiddler可以看到刷出了相似的请求，可以看到请求的参数里，<code>page_num</code>参数增加，这就是表示页码的参数：<br><img src="http://p3vld0dkf.bkt.clouddn.com/%E6%8E%A7%E5%88%B6%E9%A1%B5%E7%A0%81%E7%9A%84%E5%8F%82%E6%95%B0.png" alt="页码参数"></p>
+<h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><p>现在，图片的网址我们已经找出来了，接下来就可以编写代码下载图片了，这里我还是使用了Scrapy框架。</p>
+<p>首先，还是新建项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject scrapy_bilibili</span><br></pre></td></tr></table></figure></p>
+<p>然后编写<code>items.py</code>定义存储字段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ScrapyBilibiliItem(scrapy.Item):</span><br><span class="line">    # define the fields for your item here like:</span><br><span class="line">    # name = scrapy.Field()</span><br><span class="line">    image_urls = scrapy.Field()</span><br><span class="line">    images = scrapy.Field()</span><br><span class="line">    image_paths = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<p>然后<code>settings.py</code>把<code>ITEM_PIPELINES</code>注释取消，还有增加<code>IMAGES_STORE</code>作为存储位置，还把<code>USER_AGENT</code>改成了Fiddler看到的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    &apos;scrapy_bilibili.pipelines.ScrapyBilibiliPipeline&apos;: 300,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">IMAGES_STORE = &apos;E:/scrapy_bilibili/images&apos;</span><br><span class="line"></span><br><span class="line">USER_AGENT = &apos;Mozilla/5.0 BiliDroid/5.22.1 (bbcallen@gmail.com)&apos;</span><br></pre></td></tr></table></figure></p>
+<p>接下来是<code>pipelines.py</code>，这段代码改自官方文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from scrapy.pipelines.images import ImagesPipeline</span><br><span class="line">from scrapy.exceptions import DropItem</span><br><span class="line">from scrapy.utils.project import get_project_settings</span><br><span class="line"></span><br><span class="line">class ScrapyBilibiliPipeline(ImagesPipeline):</span><br><span class="line">    IMAGES_STORE = get_project_settings().get(&apos;IMAGES_STORE&apos;)</span><br><span class="line">    </span><br><span class="line">    def get_media_requests(self, item, info):</span><br><span class="line">        image_url = item[&apos;image_urls&apos;]</span><br><span class="line">        yield scrapy.Request(image_url)</span><br><span class="line">    </span><br><span class="line">    def item_completed(self, results, item, info):</span><br><span class="line">        image_paths = [x[&apos;path&apos;] for ok, x in results if ok]</span><br><span class="line">        if not image_paths:</span><br><span class="line">            raise DropItem(&quot;Item contains no images&quot;)</span><br><span class="line">        item[&apos;image_paths&apos;] = image_paths</span><br><span class="line">        return item</span><br></pre></td></tr></table></figure></p>
+<p>最后在<code>spiders</code>文件夹里新建<code>bilibili_spider.py</code>放置爬虫的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">import scrapy</span><br><span class="line">from scrapy_bilibili.items import ScrapyBilibiliItem</span><br><span class="line"></span><br><span class="line">class BilibiliSpider(scrapy.Spider):</span><br><span class="line">    name = &apos;bilibili_spider&apos;</span><br><span class="line">    allowed_domains = [&apos;api.vc.bilibili.com&apos;]</span><br><span class="line">    page_num = 0</span><br><span class="line">    start_urls = [&apos;http://api.vc.bilibili.com/link_draw/v2/Doc/...&amp;page_num=&apos; + str(page_num) + &apos;&amp;page_size=20...&apos;]  # 链接太长我就不放完整了</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        datas = json.loads(response.text)[&apos;data&apos;][&apos;items&apos;]</span><br><span class="line">        for data in datas:</span><br><span class="line">            item = ScrapyBilibiliItem()</span><br><span class="line">            for img in data[&apos;item&apos;][&apos;pictures&apos;]:</span><br><span class="line">                item[&apos;image_urls&apos;] = img[&apos;img_src&apos;]</span><br><span class="line">                yield item</span><br><span class="line">        if self.page_num &gt;= 10:</span><br><span class="line">            return</span><br><span class="line">        self.page_num += 1</span><br><span class="line">        yield scrapy.Request(&apos;http://api.vc.bilibili.com/link_draw/v2/Doc/...&amp;page_num=&apos; + str(self.page_num) + &apos;&amp;page_size=20...&apos;, callback = self.parse)  # 链接也是不完整的</span><br></pre></td></tr></table></figure></p>
+<h3 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h3><p>在项目的目录下执行以下命令，<strong>注意</strong><code>bilibili_spider</code>是<code>bilibili_spider.py</code>里<code>class</code>的<code>name</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl bilibili_spider</span><br></pre></td></tr></table></figure></p>
+<p>然后，等到运行完，就能看到结果了：<br><img src="http://p3vld0dkf.bkt.clouddn.com/bilibili%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="结果"></p>
+<hr>
+<p>到这里，我们的程序就完成了。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Hexo/Hexo+GitHub搭建个人博客/" itemprop="url">
-              
-                <span itemprop="name">GitHub+Hexo搭建个人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-09T02:32:00+08:00"
-              content="2018-02-09" >
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-09T02:08:00+08:00"
-              content="2018-02-09" >
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/MySQL/MySql学习笔记/" itemprop="url">
-              
-                <span itemprop="name">MySql学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-07T21:04:00+08:00"
-              content="2018-02-07" >
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Scrapy/" rel="tag"><i class="fa fa-tag"></i> Scrapy</a>
+          
+            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+          
+            <a href="/tags/Fiddler/" rel="tag"><i class="fa fa-tag"></i> Fiddler</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hexo/Hexo主题Next美化/" rel="next" title="Hexo博客设置以及Next主题美化">
+                <i class="fa fa-chevron-left"></i> Hexo博客设置以及Next主题美化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a7eeb6ac9b7a5bf" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -551,6 +564,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDAxOS8xMDU1Nw=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -571,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -665,6 +696,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler配置"><span class="nav-number">2.</span> <span class="nav-text">Fiddler配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析请求"><span class="nav-number">3.</span> <span class="nav-text">分析请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写代码"><span class="nav-number">4.</span> <span class="nav-text">编写代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行代码"><span class="nav-number">5.</span> <span class="nav-text">运行代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -826,6 +873,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -854,6 +905,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
