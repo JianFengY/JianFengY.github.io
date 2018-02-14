@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jianfengy.github.io/"/>
-  <updated>2018-02-14T17:52:58.115Z</updated>
+  <updated>2018-02-14T17:56:57.419Z</updated>
   <id>https://jianfengy.github.io/</id>
   
   <author>
@@ -18,23 +18,23 @@
   
   <entry>
     <title>Python基础语法篇（1）</title>
-    <link href="https://jianfengy.github.io/uncategorized/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87%EF%BC%881%EF%BC%89/"/>
-    <id>https://jianfengy.github.io/uncategorized/Python基础语法篇（1）/</id>
+    <link href="https://jianfengy.github.io/Python/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87%EF%BC%881%EF%BC%89/"/>
+    <id>https://jianfengy.github.io/Python/Python基础语法篇（1）/</id>
     <published>2018-02-14T15:55:28.000Z</published>
-    <updated>2018-02-14T17:52:58.115Z</updated>
+    <updated>2018-02-14T17:56:57.419Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Python是吉多·范罗苏姆在1989年的圣诞节创立的。经过二十多年的完善，已经成为了一个优秀并广泛使用的语言。</p><p>Python可以应用于数据分析、组件集成、网络服务、图像处理、数值计算和科学计算等众多领域。</p><p>诸如Youtube、Dropbox、Quora、豆瓣、知乎、Google、Yahoo!、Facebook、百度、腾讯等公司都有使用Python。</p><h3 id="编译型-amp-解释型"><a href="#编译型-amp-解释型" class="headerlink" title="编译型&amp;解释型"></a>编译型&amp;解释型</h3><p>Python是<strong>解释型语言</strong>，程序不需要编译，在运行程序的时候才翻译成机器语言，每个语句都是执行的时候才翻译。这样解释性语言每执行一次就需要逐行翻译一次，效率比较低。</p><p>而<strong>编译型语言</strong>在程序执行之前，有一个单独的编译过程，将程序翻译成机器语言，以后执行这个程序的时候，就不用再进行翻译了。典型的有C、C++。</p><p><strong>编译型语言</strong>就相当于做好一桌子菜再开吃，而<strong>编译型语言</strong>就相当于吃火锅…</p><h3 id="静态语言-amp-动态语言"><a href="#静态语言-amp-动态语言" class="headerlink" title="静态语言&amp;动态语言"></a>静态语言&amp;动态语言</h3><p>Python是一门<strong>动态语言</strong>，动态类型语言是在运行期间才去做数据类型检查的语言，也就是说，在用动态类型的语言编程时，不用给变量指定数据类型。此外，Ruby、JavaScript也是动态语言。</p><p><strong>静态语言</strong>则是在编译期间做类型判断，如C、C++等。</p><h3 id="强类型定义语言-amp-弱类型定义语言"><a href="#强类型定义语言-amp-弱类型定义语言" class="headerlink" title="强类型定义语言&amp;弱类型定义语言"></a>强类型定义语言&amp;弱类型定义语言</h3><p><strong>强类型定义语言</strong>：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p><p><strong>弱类型定义语言</strong>：数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p><p>Python是动态语言，也是强类型定义语言（类型安全的语言）；VBScript是动态语言，是弱类型定义语言（类型不安全的语言）；JAVA是静态语言，是强类型定义语言（类型安全的语言）。</p><h3 id="Python2-x-amp-Python3-x"><a href="#Python2-x-amp-Python3-x" class="headerlink" title="Python2.x&amp;Python3.x"></a>Python2.x&amp;Python3.x</h3><p>官方有一句话：</p><blockquote><p>In summary : Python 2.x is legacy, Python 3.x is the present and future of the language</p></blockquote><p>2和3详细的区别这里就不说了，最大的改动就是Python3.x里所有文本字符串默认为Unicode编码，意味着可以直接写中文，开头不需要<code># -*- coding:utf-8 -*-</code>了。</p><h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h3><p>Windows下在<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">官网</a>下载安装程序直接安装，安装时勾上<code>Add Python 3.6 to PATH</code>。</p><p>安装好后在命令行输入<code>python</code>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print(&apos;hello, world&apos;)</span><br><span class="line">hello, world</span><br></pre></td></tr></table></figure></p><p>Linux下想类似于执行shell脚本一样执行python脚本，例：<code>./hello.py</code>要在第一行加上指定解释器，<code>env</code>指里寻找python环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br></pre></td></tr></table></figure></p><p>记得执行前需给予<code>hello.py</code>执行权限，<code>chmod 755 hello.py</code></p><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul><li>变量名只能是 字母、数字或下划线的任意组合</li><li>变量名的第一个字符不能是数字</li><li>以下<strong>关键字</strong>不能声明为变量名：<br><code>[&#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;exec&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;print&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]</code></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name = &quot;Jack&quot;</span><br><span class="line">name2 = name  # name2不是指向name而是指向name的值&quot;Jack&quot;</span><br><span class="line">print(&quot;My name is &quot;, name)  # My name is  Jack</span><br><span class="line">print(name, name2)  # Jack Jack</span><br><span class="line"></span><br><span class="line">name = &quot;Tom&quot;  # 只有name变了，name2不会变</span><br><span class="line">print(name, name2)  # Tom Jack</span><br></pre></td></tr></table></figure><h3 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h3><p><strong>ASCII</strong>（American Standard Code for Information Interchange，美国标准信息交换代码）是基于拉丁字母的一套电脑编码系统，主要用于显示现代英语和其他西欧语言，其最多只能用 8 位来表示（一个字节），即：<code>2**8 = 256-1</code>，所以，ASCII码最多只能表示 255 个符号。</p><p>为了处理中文，程序员设计了用于简体中文的<strong>GB2312</strong>和用于繁体中文的big5。GB2312(1980年)一共收录了7445个字符，包括6763个汉字和682个其它符号。汉字区的内码范围高字节从B0-F7，低字节从A1-FE，占用的码位是72*94=6768。其中有5个空位是D7FA-D7FE。</p><p>1995年的汉字扩展规范<strong>GBK1.0</strong>收录了21886个符号，它分为汉字区和图形符号区。汉字区包括21003个字符。2000年的 <strong>GB18030</strong>是取代GBK1.0的正式国家标准。该标准收录了27484个汉字，同时还收录了藏文、蒙文、维吾尔文等主要的少数民族文字。<strong>现在的PC平台必须支持GB18030</strong>，对嵌入式产品暂不作要求。所以手机、MP3一般只支持GB2312。</p><p>显然ASCII码无法将世界上的各种文字和符号全部表示，所以，就需要新出一种可以代表所有字符和符号的编码，即：<br><strong>Unicode</strong>（统一码、万国码、单一码）是一种在计算机上使用的字符编码。它为每种语言中的每个字符设定了统一并且唯一的二进制编码，规定虽有的字符和符号<strong>最少</strong>由 16 位来表示（2个字节），即：<code>2 **16 = 65536</code>。</p><p><strong>UTF-8</strong>，是对Unicode编码的压缩和优化，他不再使用最少使用2个字节，而是将所有的字符和符号进行分类：<strong>ascii码</strong>中的内容用<strong>1个字节</strong>保存、<strong>欧洲的字符</strong>用<strong>2个字节</strong>保存，<strong>东亚的字符</strong>用<strong>3个字节</strong>保存。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;Python是吉多·范罗苏姆在1989年的圣诞节创立的。经过二十多年的完善，已经成为了一个优秀并广泛使用的语言。&lt;/p&gt;
-&lt;p&gt;Python
-      
+      Python教程基础语法篇（1）
     
     </summary>
     
+      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
     
   </entry>
   
@@ -62,8 +62,8 @@
   
   <entry>
     <title>Python获取Bing图片做壁纸</title>
-    <link href="https://jianfengy.github.io/Python/python%E8%8E%B7%E5%8F%96Bing%E5%9B%BE%E7%89%87%E5%81%9A%E5%A3%81%E7%BA%B8/"/>
-    <id>https://jianfengy.github.io/Python/python获取Bing图片做壁纸/</id>
+    <link href="https://jianfengy.github.io/Python/Python%E8%8E%B7%E5%8F%96Bing%E5%9B%BE%E7%89%87%E5%81%9A%E5%A3%81%E7%BA%B8/"/>
+    <id>https://jianfengy.github.io/Python/Python获取Bing图片做壁纸/</id>
     <published>2018-02-14T08:37:00.000Z</published>
     <updated>2018-02-14T14:34:36.746Z</updated>
     
