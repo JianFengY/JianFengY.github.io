@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="麻瓜码农">
 <meta property="og:description" content="Python教程基础语法篇（1）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T17:56:57.419Z">
+<meta property="og:updated_time" content="2018-02-16T14:24:06.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础语法篇（1）">
 <meta name="twitter:description" content="Python教程基础语法篇（1）">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,427
+                  1,760
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -461,6 +461,14 @@
 <h3 id="编译型-amp-解释型"><a href="#编译型-amp-解释型" class="headerlink" title="编译型&amp;解释型"></a>编译型&amp;解释型</h3><p>Python是<strong>解释型语言</strong>，程序不需要编译，在运行程序的时候才翻译成机器语言，每个语句都是执行的时候才翻译。这样解释性语言每执行一次就需要逐行翻译一次，效率比较低。</p>
 <p>而<strong>编译型语言</strong>在程序执行之前，有一个单独的编译过程，将程序翻译成机器语言，以后执行这个程序的时候，就不用再进行翻译了。典型的有C、C++。</p>
 <p><strong>编译型语言</strong>就相当于做好一桌子菜再开吃，而<strong>编译型语言</strong>就相当于吃火锅…</p>
+<p>我们还能从Python项目里看到<code>__pycache__</code>文件夹和里面的<code>.pyc</code>文件。在文档里是这么说的：</p>
+<blockquote>
+<p>To speed up loading modules, Python caches the compiled version of each module in the <strong>pycache</strong> directory under the name module.version.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number.</p>
+</blockquote>
+<p>也就是说<code>import</code>别的<code>.py</code>文件时，那个<code>.py</code>文件会被存一份<code>.pyc</code>提升下次加载的速度。<strong>注意并不是运行的速度。</strong> 例如：</p>
+<p>新建文件<code>a.py</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Greet():</span><br><span class="line">    def __init__(self, name):</span><br><span class="line">        self.name = name</span><br><span class="line">    </span><br><span class="line">    def greet(self):</span><br><span class="line">        print(&quot;Hello, &quot; + self.name + &quot;!&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>新建文件<code>b.py</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from a import Greet</span><br><span class="line"></span><br><span class="line">A = Greet(&quot;Jack&quot;)</span><br><span class="line">A.greet()</span><br></pre></td></tr></table></figure></p>
+<p>这时候，命令行运行<code>&gt;python b.py</code>，当前目录下就会生成一个<code>__pycache__</code>目录，里面有文件<code>a.cpython-36.pyc</code></p>
 <h3 id="静态语言-amp-动态语言"><a href="#静态语言-amp-动态语言" class="headerlink" title="静态语言&amp;动态语言"></a>静态语言&amp;动态语言</h3><p>Python是一门<strong>动态语言</strong>，动态类型语言是在运行期间才去做数据类型检查的语言，也就是说，在用动态类型的语言编程时，不用给变量指定数据类型。此外，Ruby、JavaScript也是动态语言。</p>
 <p><strong>静态语言</strong>则是在编译期间做类型判断，如C、C++等。</p>
 <h3 id="强类型定义语言-amp-弱类型定义语言"><a href="#强类型定义语言-amp-弱类型定义语言" class="headerlink" title="强类型定义语言&amp;弱类型定义语言"></a>强类型定义语言&amp;弱类型定义语言</h3><p><strong>强类型定义语言</strong>：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p>
@@ -486,6 +494,14 @@
 <p>1995年的汉字扩展规范<strong>GBK1.0</strong>收录了21886个符号，它分为汉字区和图形符号区。汉字区包括21003个字符。2000年的 <strong>GB18030</strong>是取代GBK1.0的正式国家标准。该标准收录了27484个汉字，同时还收录了藏文、蒙文、维吾尔文等主要的少数民族文字。<strong>现在的PC平台必须支持GB18030</strong>，对嵌入式产品暂不作要求。所以手机、MP3一般只支持GB2312。</p>
 <p>显然ASCII码无法将世界上的各种文字和符号全部表示，所以，就需要新出一种可以代表所有字符和符号的编码，即：<br><strong>Unicode</strong>（统一码、万国码、单一码）是一种在计算机上使用的字符编码。它为每种语言中的每个字符设定了统一并且唯一的二进制编码，规定虽有的字符和符号<strong>最少</strong>由 16 位来表示（2个字节），即：<code>2 **16 = 65536</code>。</p>
 <p><strong>UTF-8</strong>，是对Unicode编码的压缩和优化，他不再使用最少使用2个字节，而是将所有的字符和符号进行分类：<strong>ascii码</strong>中的内容用<strong>1个字节</strong>保存、<strong>欧洲的字符</strong>用<strong>2个字节</strong>保存，<strong>东亚的字符</strong>用<strong>3个字节</strong>保存。</p>
+<h3 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># name = raw_input(&quot;What is your name?&quot;) # python 2.x</span><br><span class="line">name = input(&quot;What is your name?&quot;)</span><br><span class="line">print(&quot;Hello &quot; + name )</span><br></pre></td></tr></table></figure>
+<ul>
+<li>python2中用raw_input()，它接收输入转换成string返回，输入数字也会当成string</li>
+<li>python2中input()原理上是raw_input()调用eval()函数，输入字符串要用引号引起</li>
+<li>python3中raw_input()和input()进行了整合,仅保留了input()函数，其接收任意输入并返回字符串类型。</li>
+<li>eval()：把字符串当成有效的python表达式求值并计算结果</li>
+<li>repr()：把变量和表达式转换成字符串表示</li>
+</ul>
 
       
     </div>
@@ -525,6 +541,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Python/Python操作MySql数据库/" rel="prev" title="Python操作MySql数据库">
+                Python操作MySql数据库 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -638,7 +658,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -700,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译型-amp-解释型"><span class="nav-number">2.</span> <span class="nav-text">编译型&amp;解释型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态语言-amp-动态语言"><span class="nav-number">3.</span> <span class="nav-text">静态语言&amp;动态语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强类型定义语言-amp-弱类型定义语言"><span class="nav-number">4.</span> <span class="nav-text">强类型定义语言&amp;弱类型定义语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python2-x-amp-Python3-x"><span class="nav-number">5.</span> <span class="nav-text">Python2.x&amp;Python3.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-World"><span class="nav-number">6.</span> <span class="nav-text">Hello World!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">7.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符编码"><span class="nav-number">8.</span> <span class="nav-text">字符编码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译型-amp-解释型"><span class="nav-number">2.</span> <span class="nav-text">编译型&amp;解释型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态语言-amp-动态语言"><span class="nav-number">3.</span> <span class="nav-text">静态语言&amp;动态语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强类型定义语言-amp-弱类型定义语言"><span class="nav-number">4.</span> <span class="nav-text">强类型定义语言&amp;弱类型定义语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python2-x-amp-Python3-x"><span class="nav-number">5.</span> <span class="nav-text">Python2.x&amp;Python3.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-World"><span class="nav-number">6.</span> <span class="nav-text">Hello World!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">7.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符编码"><span class="nav-number">8.</span> <span class="nav-text">字符编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户输入"><span class="nav-number">9.</span> <span class="nav-text">用户输入</span></a></li></ol></div>
             
 
           </div>
@@ -735,7 +755,7 @@
     
       <span class="post-meta-item-text">全站文章字数总计&#58;</span>
     
-    <span title="全站文章字数总计">16.3k</span>
+    <span title="全站文章字数总计">18.9k</span>
   
 </div>
 
