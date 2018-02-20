@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://jianfengy.github.io/"/>
+  <link href="http://jeffyang.top/"/>
   <updated>2018-02-19T19:07:51.419Z</updated>
-  <id>https://jianfengy.github.io/</id>
+  <id>http://jeffyang.top/</id>
   
   <author>
     <name>Jeff Yang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Python库Numpy使用入门</title>
-    <link href="https://jianfengy.github.io/Python/Python%E5%BA%93Numpy%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
-    <id>https://jianfengy.github.io/Python/Python库Numpy使用入门/</id>
+    <link href="http://jeffyang.top/Python/Python%E5%BA%93Numpy%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
+    <id>http://jeffyang.top/Python/Python库Numpy使用入门/</id>
     <published>2018-02-18T13:20:00.000Z</published>
     <updated>2018-02-19T19:07:51.419Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
-      <category term="Numpy" scheme="https://jianfengy.github.io/tags/Numpy/"/>
+      <category term="Numpy" scheme="http://jeffyang.top/tags/Numpy/"/>
     
   </entry>
   
   <entry>
     <title>Python操作MySql数据库</title>
-    <link href="https://jianfengy.github.io/Python/Python%E6%93%8D%E4%BD%9CMySql%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>https://jianfengy.github.io/Python/Python操作MySql数据库/</id>
+    <link href="http://jeffyang.top/Python/Python%E6%93%8D%E4%BD%9CMySql%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://jeffyang.top/Python/Python操作MySql数据库/</id>
     <published>2018-02-18T07:10:00.000Z</published>
     <updated>2018-02-18T13:00:14.220Z</updated>
     
@@ -55,19 +55,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
-      <category term="MySql" scheme="https://jianfengy.github.io/tags/MySql/"/>
+      <category term="MySql" scheme="http://jeffyang.top/tags/MySql/"/>
     
   </entry>
   
   <entry>
     <title>Python基础语法篇（1）</title>
-    <link href="https://jianfengy.github.io/Python/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87%EF%BC%881%EF%BC%89/"/>
-    <id>https://jianfengy.github.io/Python/Python基础语法篇（1）/</id>
+    <link href="http://jeffyang.top/Python/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87%EF%BC%881%EF%BC%89/"/>
+    <id>http://jeffyang.top/Python/Python基础语法篇（1）/</id>
     <published>2018-02-14T15:55:28.000Z</published>
     <updated>2018-02-16T14:24:06.138Z</updated>
     
@@ -79,17 +79,17 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>自己写一个Chrome插件</title>
-    <link href="https://jianfengy.github.io/Chrome/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAChrome%E6%8F%92%E4%BB%B6/"/>
-    <id>https://jianfengy.github.io/Chrome/自己写一个Chrome插件/</id>
+    <link href="http://jeffyang.top/Chrome/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAChrome%E6%8F%92%E4%BB%B6/"/>
+    <id>http://jeffyang.top/Chrome/自己写一个Chrome插件/</id>
     <published>2018-02-14T14:24:00.000Z</published>
     <updated>2018-02-14T14:59:08.409Z</updated>
     
@@ -101,17 +101,17 @@
     
     </summary>
     
-      <category term="Chrome" scheme="https://jianfengy.github.io/categories/Chrome/"/>
+      <category term="Chrome" scheme="http://jeffyang.top/categories/Chrome/"/>
     
     
-      <category term="Chrome" scheme="https://jianfengy.github.io/tags/Chrome/"/>
+      <category term="Chrome" scheme="http://jeffyang.top/tags/Chrome/"/>
     
   </entry>
   
   <entry>
     <title>Python获取Bing图片做壁纸</title>
-    <link href="https://jianfengy.github.io/Python/python%E8%8E%B7%E5%8F%96Bing%E5%9B%BE%E7%89%87%E5%81%9A%E5%A3%81%E7%BA%B8/"/>
-    <id>https://jianfengy.github.io/Python/python获取Bing图片做壁纸/</id>
+    <link href="http://jeffyang.top/Python/python%E8%8E%B7%E5%8F%96Bing%E5%9B%BE%E7%89%87%E5%81%9A%E5%A3%81%E7%BA%B8/"/>
+    <id>http://jeffyang.top/Python/python获取Bing图片做壁纸/</id>
     <published>2018-02-14T08:37:00.000Z</published>
     <updated>2018-02-20T15:47:59.667Z</updated>
     
@@ -123,19 +123,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
-      <category term="爬虫" scheme="https://jianfengy.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://jeffyang.top/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>Fiddler分析手机App请求Scrapy爬虫</title>
-    <link href="https://jianfengy.github.io/Python/%E7%88%AC%E8%99%AB/Fiddler%E5%88%86%E6%9E%90%E6%89%8B%E6%9C%BAApp%E8%AF%B7%E6%B1%82Scrapy%E7%88%AC%E8%99%AB/"/>
-    <id>https://jianfengy.github.io/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/</id>
+    <link href="http://jeffyang.top/Python/%E7%88%AC%E8%99%AB/Fiddler%E5%88%86%E6%9E%90%E6%89%8B%E6%9C%BAApp%E8%AF%B7%E6%B1%82Scrapy%E7%88%AC%E8%99%AB/"/>
+    <id>http://jeffyang.top/Python/爬虫/Fiddler分析手机App请求Scrapy爬虫/</id>
     <published>2018-02-13T05:52:00.000Z</published>
     <updated>2018-02-14T08:39:50.710Z</updated>
     
@@ -147,25 +147,25 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
-      <category term="爬虫" scheme="https://jianfengy.github.io/categories/Python/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://jeffyang.top/categories/Python/%E7%88%AC%E8%99%AB/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
-      <category term="Scrapy" scheme="https://jianfengy.github.io/tags/Scrapy/"/>
+      <category term="Scrapy" scheme="http://jeffyang.top/tags/Scrapy/"/>
     
-      <category term="爬虫" scheme="https://jianfengy.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://jeffyang.top/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="Fiddler" scheme="https://jianfengy.github.io/tags/Fiddler/"/>
+      <category term="Fiddler" scheme="http://jeffyang.top/tags/Fiddler/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客设置以及Next主题美化</title>
-    <link href="https://jianfengy.github.io/Hexo/Hexo%E4%B8%BB%E9%A2%98Next%E7%BE%8E%E5%8C%96/"/>
-    <id>https://jianfengy.github.io/Hexo/Hexo主题Next美化/</id>
+    <link href="http://jeffyang.top/Hexo/Hexo%E4%B8%BB%E9%A2%98Next%E7%BE%8E%E5%8C%96/"/>
+    <id>http://jeffyang.top/Hexo/Hexo主题Next美化/</id>
     <published>2018-02-10T06:20:00.000Z</published>
     <updated>2018-02-10T15:18:13.506Z</updated>
     
@@ -177,19 +177,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://jianfengy.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://jeffyang.top/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://jianfengy.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://jeffyang.top/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://jianfengy.github.io/tags/Next/"/>
+      <category term="Next" scheme="http://jeffyang.top/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>Python爬虫Scrapy入门篇</title>
-    <link href="https://jianfengy.github.io/Python/%E7%88%AC%E8%99%AB/Python%E7%88%AC%E8%99%ABScrapy%E5%85%A5%E9%97%A8%E7%AF%87/"/>
-    <id>https://jianfengy.github.io/Python/爬虫/Python爬虫Scrapy入门篇/</id>
+    <link href="http://jeffyang.top/Python/%E7%88%AC%E8%99%AB/Python%E7%88%AC%E8%99%ABScrapy%E5%85%A5%E9%97%A8%E7%AF%87/"/>
+    <id>http://jeffyang.top/Python/爬虫/Python爬虫Scrapy入门篇/</id>
     <published>2018-02-09T16:14:00.000Z</published>
     <updated>2018-02-09T20:41:35.192Z</updated>
     
@@ -201,23 +201,23 @@
     
     </summary>
     
-      <category term="Python" scheme="https://jianfengy.github.io/categories/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/categories/Python/"/>
     
-      <category term="爬虫" scheme="https://jianfengy.github.io/categories/Python/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://jeffyang.top/categories/Python/%E7%88%AC%E8%99%AB/"/>
     
     
-      <category term="Python" scheme="https://jianfengy.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://jeffyang.top/tags/Python/"/>
     
-      <category term="Scrapy" scheme="https://jianfengy.github.io/tags/Scrapy/"/>
+      <category term="Scrapy" scheme="http://jeffyang.top/tags/Scrapy/"/>
     
-      <category term="爬虫" scheme="https://jianfengy.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://jeffyang.top/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>GitHub+Hexo搭建个人博客</title>
-    <link href="https://jianfengy.github.io/Hexo/Hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://jianfengy.github.io/Hexo/Hexo+GitHub搭建个人博客/</id>
+    <link href="http://jeffyang.top/Hexo/Hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://jeffyang.top/Hexo/Hexo+GitHub搭建个人博客/</id>
     <published>2018-02-08T18:32:00.000Z</published>
     <updated>2018-02-10T07:28:05.885Z</updated>
     
@@ -229,19 +229,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://jianfengy.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://jeffyang.top/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://jianfengy.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://jeffyang.top/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://jianfengy.github.io/tags/Next/"/>
+      <category term="Next" scheme="http://jeffyang.top/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑</title>
-    <link href="https://jianfengy.github.io/Ubuntu/Ubuntu%E9%85%8D%E7%BD%AEJDK%E3%80%81MySQL%E5%92%8CTomcat%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-    <id>https://jianfengy.github.io/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/</id>
+    <link href="http://jeffyang.top/Ubuntu/Ubuntu%E9%85%8D%E7%BD%AEJDK%E3%80%81MySQL%E5%92%8CTomcat%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+    <id>http://jeffyang.top/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/</id>
     <published>2018-02-08T18:08:00.000Z</published>
     <updated>2018-02-09T07:27:05.724Z</updated>
     
@@ -253,21 +253,21 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="https://jianfengy.github.io/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://jeffyang.top/categories/Ubuntu/"/>
     
     
-      <category term="Ubuntu" scheme="https://jianfengy.github.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://jeffyang.top/tags/Ubuntu/"/>
     
-      <category term="JDK" scheme="https://jianfengy.github.io/tags/JDK/"/>
+      <category term="JDK" scheme="http://jeffyang.top/tags/JDK/"/>
     
-      <category term="Tomcat" scheme="https://jianfengy.github.io/tags/Tomcat/"/>
+      <category term="Tomcat" scheme="http://jeffyang.top/tags/Tomcat/"/>
     
   </entry>
   
   <entry>
     <title>MySql学习笔记</title>
-    <link href="https://jianfengy.github.io/MySQL/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://jianfengy.github.io/MySQL/MySql学习笔记/</id>
+    <link href="http://jeffyang.top/MySQL/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://jeffyang.top/MySQL/MySql学习笔记/</id>
     <published>2018-02-07T13:04:00.000Z</published>
     <updated>2018-02-10T16:16:44.067Z</updated>
     
@@ -279,10 +279,10 @@
     
     </summary>
     
-      <category term="MySQL" scheme="https://jianfengy.github.io/categories/MySQL/"/>
+      <category term="MySQL" scheme="http://jeffyang.top/categories/MySQL/"/>
     
     
-      <category term="MySQL" scheme="https://jianfengy.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://jeffyang.top/tags/MySQL/"/>
     
   </entry>
   
