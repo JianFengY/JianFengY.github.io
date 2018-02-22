@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,JDK,Tomcat," />
+  <meta name="keywords" content="Python,Django," />
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
-<meta name="keywords" content="Ubuntu,JDK,Tomcat">
+<meta name="description" content="Python的Web框架Django入门">
+<meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
-<meta property="og:url" content="http://jeffyang.top/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/index.html">
+<meta property="og:title" content="Django入门与实践">
+<meta property="og:url" content="http://jeffyang.top/Python/Django/Django入门与实践/index.html">
 <meta property="og:site_name" content="麻瓜码农">
-<meta property="og:description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
+<meta property="og:description" content="Python的Web框架Django入门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-09T07:27:05.724Z">
+<meta property="og:updated_time" content="2018-02-22T18:57:04.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
-<meta name="twitter:description" content="本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程">
+<meta name="twitter:title" content="Django入门与实践">
+<meta name="twitter:description" content="Python的Web框架Django入门">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://jeffyang.top/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/"/>
+  <link rel="canonical" href="http://jeffyang.top/Python/Django/Django入门与实践/"/>
 
 
 
 
 
-  <title>Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑 | 麻瓜码农</title>
+  <title>Django入门与实践 | 麻瓜码农</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://jeffyang.top/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/">
+    <link itemprop="mainEntityOfPage" href="http://jeffyang.top/Python/Django/Django入门与实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeff Yang">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑</h1>
+          <h1 class="post-title" itemprop="name headline">Django入门与实践</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T02:08:00+08:00">
-                2018-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T14:48:00+08:00">
+                2018-02-22
               </time>
             
 
@@ -372,8 +372,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
                   </a>
                 </span>
 
@@ -389,7 +400,7 @@
 
           
           
-             <span id="/Ubuntu/Ubuntu配置JDK、MySQL和Tomcat遇到的坑/" class="leancloud_visitors" data-flag-title="Ubuntu配置JDK、MySQL和Tomcat遇到的一些坑">
+             <span id="/Python/Django/Django入门与实践/" class="leancloud_visitors" data-flag-title="Django入门与实践">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  503
+                  2,690
                 </span>
               
 
@@ -430,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  11
                 </span>
               
             </div>
@@ -438,7 +449,7 @@
 
           
               <div class="post-description">
-                  本篇是我在配置阿里云Ubuntu的时候遇到的一些问题和解决过程
+                  Python的Web框架Django入门
               </div>
           
 
@@ -455,14 +466,145 @@
       
 
       
-        <p>之前买了阿里云的Ubuntu服务器，安装JDK、MySQL和Tomcat的时候遇到了一些问题，折腾了挺长时间，这里是一些记录。</p>
-<h3 id="安装配置JDK"><a href="#安装配置JDK" class="headerlink" title="安装配置JDK"></a>安装配置JDK</h3><p>windows上下载的<code>jdk-8u161-linux-i586.tar.gz</code>用xshell执行<code>rz</code>命令上传到阿里云的ubuntu，然后执行<code>mkdir /usr/java</code>建一个文件夹，再执行<code>tar zxvf jdk-8u161-linux-i586.tar.gz -C /usr/java</code>解压到java目录下，<br>之后执行<code>vim ~/.bashrc</code>在文件尾添加以下内容设置环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_151</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:&#123;JAVA_HOME&#125;/lib:&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=&#123;JAVA_HOME&#125;/bin:PATH</span><br></pre></td></tr></table></figure></p>
-<p>这里遇到了报错<code>-bash: java/ jdk1.8.0_131/bin/java: cannot execute binary file</code>，是因为我下载的JDK是64位的，而ubuntu是32位的…使用<code>getconf LONG_BIT</code>命令可以查看linux位数。</p>
-<h3 id="安装配置Mysql"><a href="#安装配置Mysql" class="headerlink" title="安装配置Mysql"></a>安装配置Mysql</h3><p>安装时有遇到<code>Err http://mirrors.aliyun.com/ubuntu 404 Not Found</code>，执行<code>sudo apt-get update</code>就可以了。</p>
-<p>网上学到的一个技巧：如果忘记了MySQL账户的密码，文件<code>/etc/mysql/debian.cnf</code>里有个MySQL用户<code>debian-sys-maint</code>。可以<code>mysql -u debian-sys-maint -p</code>使用文件提供的密码登录MySQL修改root的密码。</p>
-<p>修改MySQL密码时因为设置的密码过于简单会报错<code>Your password does not satisfy the current policy requirements</code>，处理如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;</span><br><span class="line">ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</span><br><span class="line"></span><br><span class="line">mysql&gt; set global validate_password_policy=0;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; set global validate_password_length=4;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;</span><br><span class="line">Query OK, 1 row affected, 1 warning (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 1</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装配置tomcat"><a href="#安装配置tomcat" class="headerlink" title="安装配置tomcat"></a>安装配置tomcat</h3><p>安装运行之后不能使用外网访问，执行<code>ufw allow 8080</code>允许外网可以访问8080端口<br>然后配置阿里云安全组，找到自己的实例，点击<strong>更多</strong>-<strong>安全组配置</strong>-<strong>配置规则</strong>-<strong>添加安全组规则</strong>配置<strong>端口范围</strong><code>8080/8080</code>，<strong>授权对象</strong><code>0.0.0.0/0</code>之后就可以了。</p>
-
+        <p>Django是一个功能强大的Python的高级Web框架，这是学习慕课网<a href="https://www.imooc.com/learn/790" target="_blank" rel="noopener">django入门与实践</a>的课程笔记。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li>Django是一个基于Python的高级Web开发框架，它能够让开发人员进行高效且快速的开发。</li>
+<li>是高度集成的，不用自己造轮子，只需专注于网站本身的开发</li>
+<li>Django免费且开源</li>
+</ul>
+<h3 id="浏览器上网基本原理"><a href="#浏览器上网基本原理" class="headerlink" title="浏览器上网基本原理"></a>浏览器上网基本原理</h3><p>上网过程：<br>浏览器输入网址 –&gt; 回车（<strong>向目标URL发送一个HTTP请求</strong>） –&gt; 看到网页（<strong>服务器响应请求，把代码返回给浏览器解析成看到的页面</strong>）</p>
+<ul>
+<li>本质是<strong>网络通信</strong>，即通过网络进行数据传递</li>
+<li>浏览器经过通信后获取到该页面的<strong>源代码文档（HTML等）</strong></li>
+<li>浏览器<strong>解析文档</strong>后以适当的形式展现给用户</li>
+</ul>
+<p>总之，请求响应过程就是浏览器发送HTTP请求给网站服务器，服务器通过后台代码处理请求，然后返回HTTP响应，把HTML文档等返回给浏览器，通过浏览器解析成用户看到的页面。</p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h4 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h4><p>windows下访问<a href="https://www.python.org/" target="_blank" rel="noopener">官网</a>点击下载直接安装，课程里用的是Python2.7，我这里是<strong>Python3.6</strong><br>安装时选上<code>Add python.exe to PATH</code>。</p>
+<h4 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h4><p>课程里用的是Django1.10.2，我这里是<strong>Django1.11.7</strong>。<br>最简单方便的安装方式，可以指定安装版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Django==2.0.2</span><br></pre></td></tr></table></figure></p>
+<p>或者使用源码安装，下载源码，进入根目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>具体可以<a href="https://www.djangoproject.com/download/" target="_blank" rel="noopener">点击这里</a>查看官网的说明</p>
+<h4 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h4><p>使用的是Pycharm，也可以根据自己习惯选择Eclipse+Pydev、Sublime Text、Atom或Visual Studio Code等。</p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><h4 id="创建项目，了解目录下文件的作用"><a href="#创建项目，了解目录下文件的作用" class="headerlink" title="创建项目，了解目录下文件的作用"></a>创建项目，了解目录下文件的作用</h4><p>在想要放置项目的目录里打开cmd命令行，执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject project_name</span><br></pre></td></tr></table></figure></p>
+<p>如<code>django-admin startproject myblog</code>，然后可以看到项目的目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├─manage.py</span><br><span class="line">└─myblog</span><br><span class="line">     ├─__init__.py</span><br><span class="line">     ├─settings.py</span><br><span class="line">     ├─urls.py</span><br><span class="line">     └─wsgi.py</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>manage.py</code>：与项目进行交互的命令行工具集的入口，相当于项目管理器，执行<code>python manage.py</code>来查看所有命令。<ul>
+<li><code>python manage.py runserver</code>启动自带服务器</li>
+<li><code>python manage.py runserver 9999</code>指定端口号</li>
+</ul>
+</li>
+<li><code>myblog目录</code>：项目的一个容器，包含项目最基本的一些配置。目录名称允许修改，但<strong>不建议修改</strong>，因为许多配置文件里已经使用了这个目录名称做配置。</li>
+<li><code>wsgi.py</code>：WSGI(Python Web Server Gateway Interface)中文叫Python服务器网关接口。就是Python应用与Web服务器之间的接口</li>
+<li><code>urls.py</code>：URL配置文件，Django项目中所有的地址（页面）都需要我们自己去配置其URL</li>
+<li><code>settings.py</code>:项目的总配置文件，里面包含了数据库、Web应用、时间等各种配置:<ul>
+<li><code>BASE_DIR</code>：项目的根目录</li>
+<li><code>SECRET_KEY</code>：项目自动生成的安全码</li>
+<li><code>DEBUG</code>：调试模式，生产环境中不要打开</li>
+<li><code>ALLOWED_HOSTS</code>：Django只允许通过这里面的地址访问网站，屏蔽其他所有地址，使其变成<code>Bad Request (400)</code></li>
+<li><code>INSTALLED_APPS</code>：已安装应用，Django项目是由许多应用组成的，生成项目时会有一些自动生成的应用，自行创建的用用要添加到这里</li>
+<li><code>MIDDLEWARE</code>：中间件，Django自带的一些工具集</li>
+<li><code>ROOT_URLCONF</code>：URL的根文件，这里指向<code>urls.py</code></li>
+<li><code>TEMPLATES</code>：模板的一些配置</li>
+<li><code>WSGI_APPLICATION</code>：<code>wsgi.py</code>相关，暂时不管</li>
+<li><code>DATABASES</code>：数据库配置</li>
+<li><code>AUTH_PASSWORD_VALIDATORS</code>：与密码认证有关，暂时不管</li>
+<li><code>LANGUAGE_CODE = &#39;en-us&#39;</code>、<code>TIME_ZONE = &#39;UTC&#39;</code>、<code>USE_I18N = True</code>、<code>USE_L10N = True</code>、<code>USE_TZ = True</code>：这五个是国际化相关的配置，语言、时区等</li>
+<li><code>STATIC_URL</code>：静态文件目录</li>
+</ul>
+</li>
+<li><code>__init__.py</code>：Python中声明模块的文件，内容默认为空</li>
+</ul>
+<h4 id="创建应用，了解应用目录下各文件的作用"><a href="#创建应用，了解应用目录下各文件的作用" class="headerlink" title="创建应用，了解应用目录下各文件的作用"></a>创建应用，了解应用目录下各文件的作用</h4><p>应用创建步骤：<br>进入<code>manage.py</code>同级目录，打开命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp app_name</span><br></pre></td></tr></table></figure></p>
+<p>如<code>python manage.py startapp blog</code>。（<strong>注意</strong>：命名不能与Python内置模块重名，会报错。）<br>添加应用名到<code>settings.py</code>中的<code>INSTALLED_APPS</code>里。<br>目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">├─manage.py</span><br><span class="line">├─……</span><br><span class="line">└─blog</span><br><span class="line">     ├─migrations</span><br><span class="line">          ├─__init__.py</span><br><span class="line">     ├─__init__.py</span><br><span class="line">     ├─admin.py</span><br><span class="line">     ├─apps.py</span><br><span class="line">     ├─models.py</span><br><span class="line">     ├─tests.py</span><br><span class="line">     └─views.py</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>migrations目录</code>：数据移植（迁移）模块，内容自动生成</li>
+<li><code>admin.py</code>：该应用的后台管理系统配置</li>
+<li><code>apps.py</code>：该应用的一些配置，Django1.9以后自动生成</li>
+<li><code>models.py</code>：数据模块，使用ORM框架，类似于MVC结构中的Models（模型）</li>
+<li><code>tests.py</code>：自动化测试模块，Django提供了自动化测试功能，可以在这里编写测试脚本（语句）</li>
+<li><code>views.py</code>：执行响应的代码所在的模块，代码逻辑处理的主要地点，项目中的<strong>大部分</strong>代码均在这里编写</li>
+</ul>
+<h4 id="创建第一个页面响应"><a href="#创建第一个页面响应" class="headerlink" title="创建第一个页面响应"></a>创建第一个页面响应</h4><p>编辑<code>blog目录</code>下的<code>views.py</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return HttpResponse(&quot;Hello, World!&quot;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>每个响应对应一个函数，函数必须返回一个响应</li>
+<li>函数必须存在一个参数，一般约定为<code>request</code></li>
+<li>每一个响应（函数）对应一个URL</li>
+</ul>
+<p>然后修改<code>urls.py</code>配置URL：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import blog.views as bv</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^index/&apos;, bv.index),  # 增加这一行</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>每个URL都一url的形式写出来</li>
+<li>url函数放在<code>urlpatterns</code>列表中</li>
+<li>url函数三个参数：URL（正则）、对应方法、名称</li>
+</ul>
+<p>然后<code>python manage.py runserver</code>启动服务器，浏览器访问<code>http://localhost:8000/index/</code>就会出现经典的<code>Hello, World!</code>了。</p>
+<h3 id="第一个Template"><a href="#第一个Template" class="headerlink" title="第一个Template"></a>第一个Template</h3><h4 id="配置URL的第二种方法（包含其他URL配置）"><a href="#配置URL的第二种方法（包含其他URL配置）" class="headerlink" title="配置URL的第二种方法（包含其他URL配置）"></a>配置URL的第二种方法（包含其他URL配置）</h4><p>修改根<code>urls.py</code>，引入<code>include</code>，url函数第二个参数改为<code>include(&#39;blog.urls&#39;)</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url, include</span><br><span class="line">from django.contrib import admin</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^blog/&apos;, include(&apos;blog.urls&apos;)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>在应用目录<code>blog目录</code>下创建<code>urls.py</code>文件，格式与根<code>urls.py</code>相同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url</span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^index/$&apos;, views.index),  # 限制index，注意加一个‘/’，否则访问“http://localhost:8000/blog/index/”会出现404</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>注意事项：</p>
+<ul>
+<li>根<code>urls.py</code>针对APP配置的URL名称，是该APP所有URL的总路径，即在<code>blog.urls</code>配置的URL前都要加上根<code>urls.py</code>配置的URL</li>
+<li>配置URL为空时不要直接<code>r&#39;&#39;</code>，因为这样为空时可以访问，输入任意字符也可以访问，要使用<code>r&#39;^$&#39;</code></li>
+<li>配置URL时注意正则表达式结尾符号<code>$</code>和<code>/</code></li>
+</ul>
+<h4 id="开发第一个Template"><a href="#开发第一个Template" class="headerlink" title="开发第一个Template"></a>开发第一个Template</h4><ul>
+<li>Django里的Templates其实就是HTML文件</li>
+<li>Templates是用来Django模版语言（Django Template Language, DTL）</li>
+<li>也可以使用第三方模版（如Jinja2）</li>
+</ul>
+<p>要修改模版引擎，在<code>settings.py</code>文件中找到<code>TEMPLATES</code>修改键值对<code>&#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,</code>改为要使用的模版引擎就可以了。</p>
+<p>步骤：</p>
+<ul>
+<li>在APP的根目录下创建名叫templates的目录，如<code>myblog/blog/templates</code></li>
+<li><p>在templates目录下创建HTML文件,如<code>index.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Blog&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Hello, Blog!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>views.py</code>中返回<code>render()</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return render(request, &apos;index.html&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后访问<code>http://localhost:8000/blog/index/</code>就会出现<code>index.html</code>页面了。</p>
+<p>DTL初步使用：</p>
+<ul>
+<li><code>render()</code>函数中支持一个<strong>dict</strong>类型参数</li>
+<li>该字典是后台传递到模版的参数，<strong>键</strong>为<strong>参数名</strong></li>
+<li>在模版中用<code></code>来直接使用</li>
+</ul>
+<p>所以，上面的<code>views.py</code>可以改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return render(request, &apos;index.html&apos;, &#123;&apos;hello&apos;: &apos;Hello, Blog!&apos;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>然后，<code>index.html</code>中的<code>&lt;h1&gt;</code>可以改成:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; hello &#125;&#125;&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>：<br>Django按照<code>INSTALLED_APPS</code>中的添加顺序查找templates，<strong>不同APP</strong>下templs目录中的<strong>同名HTML</strong>文件会造成<strong>冲突</strong></p>
+<p>解决templates冲突方案：<br>在<strong>APP</strong>的templates目录下创建以<strong>APP名</strong>为名称的目录，将<strong>html文件</strong>放入新创建的目录下。所以，新建templates目录时都在该目录下新建一个与应用名同名的目录。</p>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><p>Django中的Models：</p>
+<ul>
+<li>通常，<strong>一个Model</strong>对应数据库的<strong>一张表</strong></li>
+<li>Django中的Models以<strong>类</strong>的形式表现</li>
+<li>它包含了一些<strong>基本字段</strong>以及数据的<strong>一些行为</strong></li>
+</ul>
+<p><strong>ORM</strong>：</p>
+<ul>
+<li>对象关系映射（Object Relation Mapping）</li>
+<li>实现了<strong>对象</strong>和<strong>数据库</strong>之间的<strong>映射</strong></li>
+<li>隐藏了数据访问的细节，不需要编写<strong>SQL语句</strong></li>
+</ul>
+<h4 id="编写Models"><a href="#编写Models" class="headerlink" title="编写Models"></a>编写Models</h4><ul>
+<li>在应用根目录下创建<code>models.py</code>，并引入<code>models</code>模块</li>
+<li>创建类，继承<code>models.Model</code>，该类即是一张数据表</li>
+<li>在类中创建字段</li>
+</ul>
+<p>字段即类里面的<strong>属性</strong>（变量）,字段创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attr = models.CharField(max_length=64)</span><br></pre></td></tr></table></figure></p>
+<p>关于类的字段及可选参数等设置可以<a href="https://docs.djangoproject.com/en/1.11/ref/models/fields/" target="_blank" rel="noopener">点击官网</a>查看</p>
+<h4 id="生成数据表"><a href="#生成数据表" class="headerlink" title="生成数据表"></a>生成数据表</h4><p>命令行中进入<code>manage.py</code>同级目录执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py makemigrations app_name（可选）</span><br></pre></td></tr></table></figure></p>
+<p>不写应用名<code>app_name</code>默认该项目下所有应用都生成数据迁移。<br>执行之后可以看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Migrations for &apos;blog&apos;:</span><br><span class="line">  blog\migrations\0001_initial.py</span><br><span class="line">    - Create model Arcticle</span><br></pre></td></tr></table></figure></p>
+<p>之后，再执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure></p>
+<p>可以看到结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Operations to perform:</span><br><span class="line">  Apply all migrations: admin, auth, blog, contenttypes, sessions</span><br><span class="line">Running migrations:</span><br><span class="line">  Applying contenttypes.0001_initial... OK</span><br><span class="line">  Applying auth.0001_initial... OK</span><br><span class="line">  Applying admin.0001_initial... OK</span><br><span class="line">  Applying admin.0002_logentry_remove_auto_add... OK</span><br><span class="line">  Applying contenttypes.0002_remove_content_type_name... OK</span><br><span class="line">  Applying auth.0002_alter_permission_name_max_length... OK</span><br><span class="line">  Applying auth.0003_alter_user_email_max_length... OK</span><br><span class="line">  Applying auth.0004_alter_user_username_opts... OK</span><br><span class="line">  Applying auth.0005_alter_user_last_login_null... OK</span><br><span class="line">  Applying auth.0006_require_contenttypes_0002... OK</span><br><span class="line">  Applying auth.0007_alter_validators_add_error_messages... OK</span><br><span class="line">  Applying auth.0008_alter_user_username_max_length... OK</span><br><span class="line">  Applying blog.0001_initial... OK</span><br><span class="line">  Applying sessions.0001_initial... OK</span><br></pre></td></tr></table></figure></p>
+<p>上面那些<code>auth</code>、<code>admin</code>等是<code>settings</code>里<code>INSTALLED_APPS</code>自带应用的数据迁移。</p>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><p>Django会自动在<code>app_name/migrations/</code>目录下生成移植文件。<br>可以看到在<code>blog\migrations\0001_initial.py</code>文件里的<code>fields</code>有多一个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&apos;id&apos;, models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name=&apos;ID&apos;)),</span><br></pre></td></tr></table></figure></p>
+<p>这是因为在创建模型时我们没有人为添加<strong>主键</strong>，所以Django为数据表创建了这个主键，如果人为添加主键就不会有这个id了。</p>
+<p>执行以下命令查看SQL语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py sqlmigrate 应用名 文件id</span><br></pre></td></tr></table></figure></p>
+<p>如：<code>python manage.py sqlmigrate blog 0001</code>可以看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">--</span><br><span class="line">-- Create model Arcticle</span><br><span class="line">--</span><br><span class="line">CREATE TABLE &quot;blog_arcticle&quot; (&quot;id&quot; integer NOT NULL PRIMARY KEY AUTOINCREMENT, &quot;title&quot; varchar(32) NOT NULL, &quot;content&quot; text NULL);</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure></p>
+<p>默认<strong>sqllite3</strong>的数据库在项目根目录下<code>db.sqlite3</code></p>
+<p>查看并编辑<code>db.sqlite3</code>使用轻量级第三方免费软件：<a href="http://www.sqliteexpert.com/download.html" target="_blank" rel="noopener">SQLite Expert Personal</a><br>就可以在<code>blog_article</code>表中增加一条测试数据。</p>
+<h4 id="页面呈现数据"><a href="#页面呈现数据" class="headerlink" title="页面呈现数据"></a>页面呈现数据</h4><p>后台步骤：<br><code>views.py</code>中<code>import models</code><br>获取模型累的一个具体对象:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">article = models.Article.objects.get(pk=1)</span><br></pre></td></tr></table></figure></p>
+<p><code>get()</code>的参数就是要指定的数据的标识，除了<code>pk</code>也可以用<code>title</code>或<code>content</code>。其实就相当于<code>SELECT</code>语句。<br>之后使用<code>render()</code>把<strong>对象</strong>传递到前端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render(request, page, &#123;&apos;article&apos;: article&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>前端步骤：<br>模版可直接使用对象以及对象的“.”操作，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; article.title &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;h3&gt;&#123;&#123; article.content &#125;&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Admin"><a href="#Admin" class="headerlink" title="Admin"></a>Admin</h3>
       
     </div>
     
@@ -479,11 +621,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/JDK/" rel="tag"><i class="fa fa-tag"></i> JDK</a>
-          
-            <a href="/tags/Tomcat/" rel="tag"><i class="fa fa-tag"></i> Tomcat</a>
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
           
         </div>
       
@@ -496,8 +636,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/MySQL/MySql学习笔记/" rel="next" title="MySql学习笔记">
-                <i class="fa fa-chevron-left"></i> MySql学习笔记
+              <a href="/Python/Python库Numpy使用入门/" rel="next" title="Python库Numpy使用入门">
+                <i class="fa fa-chevron-left"></i> Python库Numpy使用入门
               </a>
             
           </div>
@@ -505,10 +645,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Hexo/Hexo+GitHub搭建个人博客/" rel="prev" title="GitHub+Hexo搭建个人博客">
-                GitHub+Hexo搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +820,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置JDK"><span class="nav-number">1.</span> <span class="nav-text">安装配置JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置Mysql"><span class="nav-number">2.</span> <span class="nav-text">安装配置Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置tomcat"><span class="nav-number">3.</span> <span class="nav-text">安装配置tomcat</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器上网基本原理"><span class="nav-number">2.</span> <span class="nav-text">浏览器上网基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">3.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Python"><span class="nav-number">3.1.</span> <span class="nav-text">安装Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Django"><span class="nav-number">3.2.</span> <span class="nav-text">安装Django</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发工具"><span class="nav-number">3.3.</span> <span class="nav-text">开发工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建项目"><span class="nav-number">4.</span> <span class="nav-text">创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目，了解目录下文件的作用"><span class="nav-number">4.1.</span> <span class="nav-text">创建项目，了解目录下文件的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建应用，了解应用目录下各文件的作用"><span class="nav-number">4.2.</span> <span class="nav-text">创建应用，了解应用目录下各文件的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建第一个页面响应"><span class="nav-number">4.3.</span> <span class="nav-text">创建第一个页面响应</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个Template"><span class="nav-number">5.</span> <span class="nav-text">第一个Template</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置URL的第二种方法（包含其他URL配置）"><span class="nav-number">5.1.</span> <span class="nav-text">配置URL的第二种方法（包含其他URL配置）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发第一个Template"><span class="nav-number">5.2.</span> <span class="nav-text">开发第一个Template</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Models"><span class="nav-number">6.</span> <span class="nav-text">Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编写Models"><span class="nav-number">6.1.</span> <span class="nav-text">编写Models</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成数据表"><span class="nav-number">6.2.</span> <span class="nav-text">生成数据表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看"><span class="nav-number">6.3.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面呈现数据"><span class="nav-number">6.4.</span> <span class="nav-text">页面呈现数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Admin"><span class="nav-number">7.</span> <span class="nav-text">Admin</span></a></li></ol></div>
             
 
           </div>
