@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="麻瓜码农">
 <meta property="og:description" content="Python爬虫常用库urllib的使用方法介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-26T09:57:02.371Z">
+<meta property="og:updated_time" content="2018-02-26T19:24:27.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫常用库urllib详解">
 <meta name="twitter:description" content="Python爬虫常用库urllib的使用方法介绍">
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,941
+                  2,887
                 </span>
               
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17
+                  16
                 </span>
               
             </div>
@@ -476,7 +476,173 @@
 <li><code>urllib.robotparser</code> for parsing robots.txt files</li>
 </ul>
 </blockquote>
-<p>这个库的使用在Python2里有一些区别，具体差异可以参考：<br>|Python 2|Python 3|<br>|:–:|:–:|<br>|<code>urllib.urlretrieve()</code>|<code>urllib.request.urlretrieve()</code>|<br>|<code>urllib.urlcleanup()</code>|<code>urllib.request.urlcleanup()</code>|<br>|<code>urllib.quote()</code>|<code>urllib.parse.quote()</code>|<br>|<code>urllib.quote_plus()</code>|<code>urllib.parse.quote_plus()</code>|<br>|<code>urllib.unquote()</code>|<code>urllib.parse.unquote()</code>|<br>|<code>urllib.unquote_plus()</code>|<code>urllib.parse.unquote_plus()</code>|<br>|<code>urllib.urlencode()</code>|<code>urllib.parse.urlencode()</code>|<br>|<code>urllib.pathname2url()</code>|<code>urllib.request.pathname2url()</code>|<br>|<code>urllib.url2pathname()</code>|<code>urllib.request.url2pathname()</code>|<br>|<code>urllib.getproxies()</code>|<code>urllib.request.getproxies()</code>|<br>|<code>urllib.URLopener</code>|<code>urllib.request.URLopener</code>|<br>|<code>urllib.FancyURLopener</code>|<code>urllib.request.FancyURLopener</code>|<br>|<code>urllib.ContentTooShortError</code>|<code>urllib.error.ContentTooShortError</code>|<br>|<code>urllib2.urlopen()</code>|<code>urllib.request.urlopen()</code>|<br>|<code>urllib2.install_opener()</code>|<code>urllib.request.install_opener()</code>|<br>|<code>urllib2.build_opener()</code>|<code>urllib.request.build_opener()</code>|<br>|<code>urllib2.URLError</code>|<code>urllib.error.URLError</code>|<br>|<code>urllib2.HTTPError</code>|<code>urllib.error.HTTPError</code>|<br>|<code>urllib2.Request</code>|<code>urllib.request.Request</code>|<br>|<code>urllib2.OpenerDirector</code>|<code>urllib.request.OpenerDirector</code>|<br>|<code>urllib2.BaseHandler</code>|<code>urllib.request.BaseHandler</code>|<br>|<code>urllib2.HTTPDefaultErrorHandler</code>|<code>urllib.request.HTTPDefaultErrorHandler</code>|<br>|<code>urllib2.HTTPRedirectHandler</code>|<code>urllib.request.HTTPRedirectHandler</code>|<br>|<code>urllib2.HTTPCookieProcessor</code>|<code>urllib.request.HTTPCookieProcessor</code>|<br>|<code>urllib2.ProxyHandler</code>|<code>urllib.request.ProxyHandler</code>|<br>|<code>urllib2.HTTPPasswordMgr</code>|<code>urllib.request.HTTPPasswordMgr</code>|<br>|<code>urllib2.HTTPPasswordMgrWithDefaultRealm</code>|<code>urllib.request.HTTPPasswordMgrWithDefaultRealm</code>|<br>|<code>urllib2.AbstractBasicAuthHandler</code>|<code>urllib.request.AbstractBasicAuthHandler</code>|<br>|<code>urllib2.HTTPBasicAuthHandler</code>|<code>urllib.request.HTTPBasicAuthHandler</code>|<br>|<code>urllib2.ProxyBasicAuthHandler</code>|<code>urllib.request.ProxyBasicAuthHandler</code>|<br>|<code>urllib2.AbstractDigestAuthHandler</code>|<code>urllib.request.AbstractDigestAuthHandler</code>|<br>|<code>urllib2.HTTPDigestAuthHandler</code>|<code>urllib.request.HTTPDigestAuthHandler</code>|<br>|<code>urllib2.ProxyDigestAuthHandler</code>|<code>urllib.request.ProxyDigestAuthHandler</code>|<br>|<code>urllib2.HTTPHandler</code>|<code>urllib.request.HTTPHandler</code>|<br>|<code>urllib2.HTTPSHandler</code>|<code>urllib.request.HTTPSHandler</code>|<br>|<code>urllib2.FileHandler</code>|<code>urllib.request.FileHandler</code>|<br>|<code>urllib2.FTPHandler</code>|<code>urllib.request.FTPHandler</code>|<br>|<code>urllib2.CacheFTPHandler</code>|<code>urllib.request.CacheFTPHandler</code>|<br>|<code>urllib2.UnknownHandler</code>|<code>urllib.request.UnknownHandler</code>|</p>
+<p>这个库的使用在Python2里有一些区别，具体差异可以参考：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>urllib.urlretrieve()</code></td>
+<td style="text-align:center"><code>urllib.request.urlretrieve()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.urlcleanup()</code></td>
+<td style="text-align:center"><code>urllib.request.urlcleanup()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.quote()</code></td>
+<td style="text-align:center"><code>urllib.parse.quote()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.quote_plus()</code></td>
+<td style="text-align:center"><code>urllib.parse.quote_plus()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.unquote()</code></td>
+<td style="text-align:center"><code>urllib.parse.unquote()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.unquote_plus()</code></td>
+<td style="text-align:center"><code>urllib.parse.unquote_plus()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.urlencode()</code></td>
+<td style="text-align:center"><code>urllib.parse.urlencode()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.pathname2url()</code></td>
+<td style="text-align:center"><code>urllib.request.pathname2url()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.url2pathname()</code></td>
+<td style="text-align:center"><code>urllib.request.url2pathname()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.getproxies()</code></td>
+<td style="text-align:center"><code>urllib.request.getproxies()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.URLopener</code></td>
+<td style="text-align:center"><code>urllib.request.URLopener</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.FancyURLopener</code></td>
+<td style="text-align:center"><code>urllib.request.FancyURLopener</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib.ContentTooShortError</code></td>
+<td style="text-align:center"><code>urllib.error.ContentTooShortError</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.urlopen()</code></td>
+<td style="text-align:center"><code>urllib.request.urlopen()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.install_opener()</code></td>
+<td style="text-align:center"><code>urllib.request.install_opener()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.build_opener()</code></td>
+<td style="text-align:center"><code>urllib.request.build_opener()</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.URLError</code></td>
+<td style="text-align:center"><code>urllib.error.URLError</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPError</code></td>
+<td style="text-align:center"><code>urllib.error.HTTPError</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.Request</code></td>
+<td style="text-align:center"><code>urllib.request.Request</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.OpenerDirector</code></td>
+<td style="text-align:center"><code>urllib.request.OpenerDirector</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.BaseHandler</code></td>
+<td style="text-align:center"><code>urllib.request.BaseHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPDefaultErrorHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPDefaultErrorHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPRedirectHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPRedirectHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPCookieProcessor</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPCookieProcessor</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.ProxyHandler</code></td>
+<td style="text-align:center"><code>urllib.request.ProxyHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPPasswordMgr</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPPasswordMgr</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPPasswordMgrWithDefaultRealm</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPPasswordMgrWithDefaultRealm</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.AbstractBasicAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.AbstractBasicAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPBasicAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPBasicAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.ProxyBasicAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.ProxyBasicAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.AbstractDigestAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.AbstractDigestAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPDigestAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPDigestAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.ProxyDigestAuthHandler</code></td>
+<td style="text-align:center"><code>urllib.request.ProxyDigestAuthHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.HTTPSHandler</code></td>
+<td style="text-align:center"><code>urllib.request.HTTPSHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.FileHandler</code></td>
+<td style="text-align:center"><code>urllib.request.FileHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.FTPHandler</code></td>
+<td style="text-align:center"><code>urllib.request.FTPHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.CacheFTPHandler</code></td>
+<td style="text-align:center"><code>urllib.request.CacheFTPHandler</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>urllib2.UnknownHandler</code></td>
+<td style="text-align:center"><code>urllib.request.UnknownHandler</code></td>
+</tr>
+</tbody>
+</table>
 <p>我这里用的是Python3.6版本。</p>
 <h3 id="urllib-request请求模块"><a href="#urllib-request请求模块" class="headerlink" title="urllib.request请求模块"></a>urllib.request请求模块</h3><h4 id="urlopen函数"><a href="#urlopen函数" class="headerlink" title="urlopen函数"></a>urlopen函数</h4><p>属于<code>urllib.request</code>模块，用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</span><br></pre></td></tr></table></figure></p>
 <p><code>url</code>为访问地址，<code>data</code>为指定要发送到服务器的附加数据，<code>timeout</code>参数设定超时，后面的是证书和SSL相关参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [1]: import urllib.request</span><br><span class="line"></span><br><span class="line">In [2]: response = urllib.request.urlopen(&apos;http://www.baidu.com&apos;)</span><br><span class="line"></span><br><span class="line">In [3]: print(response.read().decode(&apos;utf-8&apos;))</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!--STATUS OK--&gt;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">In [4]:</span><br></pre></td></tr></table></figure></p>
