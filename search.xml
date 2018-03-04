@@ -3,41 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[Kali更新时出现签名无效、Hash和校验不符的问题]]></title>
-      <url>/Linux/Kali/Kali%E6%9B%B4%E6%96%B0%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%95%88%E3%80%81Hash%E5%92%8C%E6%A0%A1%E9%AA%8C%E4%B8%8D%E7%AC%A6%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天在整我虚拟机上的Kali系统，安装东西的时候出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: 有几个软件包无法下载，要不运行 apt-get update 或者加上 --fix-missing 的选项再试试？</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><p>然后，使用<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>更新的时候，出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误:4 http://mirrors.ustc.edu.cn/kali kali-rolling InRelease</span><br><span class="line">  下列签名无效： EXPKEYSIG ED444FF07D8D0BF6 Kali Linux Repository &lt;devel@kali.org&gt;</span><br><span class="line">已下载 30.5 kB，耗时 1秒 (24.5 kB/s)</span><br><span class="line">正在读取软件包列表... 完成</span><br><span class="line">W: 校验数字签名时出错。此仓库未被更新，所以仍然使用此前的索引文件。GPG 错误：http://mirrors.ustc.edu.cn/kali kali-rolling InRelease: 下列签名无效： EXPKEYSIG ED444FF07D8D0BF6 Kali Linux Repository &lt;devel@kali.org&gt;</span><br></pre></td></tr></table></figure></p>
-<p>然后，使用<code>apt-key list</code>查看，发现有个<code>keyring.gpg</code>过期了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg</span><br><span class="line">-----------------------------------------------</span><br><span class="line">pub   rsa4096 2012-03-05 [SC] [expired: 2018-02-02]</span><br><span class="line">      44C6 513A 8E4F B3D3 0875  F758 ED44 4FF0 7D8D 0BF6</span><br><span class="line">uid           [ expired] Kali Linux Repository &lt;devel@kali.org&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>解决方法</strong>：<br>首先使用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb</span><br></pre></td></tr></table></figure></p>
-<p>然后运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./kali-archive-keyring_2018.1_all.deb</span><br></pre></td></tr></table></figure></p>
-<p>这个问题就解决了</p>
-<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p>但是这个时候再使用<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>，又出现了另一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">E: 无法下载 http://172.17.0.111/cache/7/02/mirrors.ustc.edu.cn/01fbf595fbfd06d37257ada0be178b0b/Sources.gz  Hash 校验和不符</span><br><span class="line">   Hashes of expected file:</span><br><span class="line">    - Filesize:11822681 [weak]</span><br><span class="line">    - SHA256:32a1f422348290dbe259aa9c57ea3c8e9622b4f6e808dcc7694163d3d8622c26</span><br><span class="line">    - SHA1:872723d9ba3977a72101d847ce341c503e681cef [weak]</span><br><span class="line">    - MD5Sum:c4c623d3ec6792e477ef37c62561021a [weak]</span><br><span class="line">   Hashes of received file:</span><br><span class="line">    - SHA256:2ee0958d97d7df9fe0b406f0b18d225125939f0d3699cc3f9b2dd3c948cea941</span><br><span class="line">    - SHA1:fe4abbd5e75606c6ce6df3d87968f32bd16c9027 [weak]</span><br><span class="line">    - MD5Sum:5c7119257cd72146aa5f4d70daf41e4b [weak]</span><br><span class="line">    - Filesize:11702644 [weak]</span><br><span class="line">   Last modification reported: Fri, 26 Jan 2018 00:03:11 +0000</span><br><span class="line">   Release file created at: Sat, 03 Mar 2018 00:03:33 +0000</span><br><span class="line">E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。</span><br></pre></td></tr></table></figure></p>
-<p><strong>解决方法</strong>：<br>这是因为我之前的更新没有顺利结束，有临时文件残留，所以先执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get clean</span><br></pre></td></tr></table></figure></p>
-<p>再执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /var/lib/apt/lists/*</span><br></pre></td></tr></table></figure></p>
-<p>就可以了。</p>
-<p>另外，这个问题也有可能是<strong>网络问题</strong>导致的。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Linux </category>
-            
-            <category> Kali </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> Kali </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Scrapy抓取新浪微博用户保存到MongoDB]]></title>
       <url>/Python/%E7%88%AC%E8%99%AB/Scrapy%E6%8A%93%E5%8F%96%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%94%A8%E6%88%B7%E4%BF%9D%E5%AD%98%E5%88%B0MongoDB/</url>
       <content type="html"><![CDATA[<p>前一段时间我发现这个版本<a href="https://m.weibo.cn" target="_blank" rel="noopener">https://m.weibo.cn</a>的新浪微博，然后就花了些时间找到一些Ajax请求和链接规律。</p>
@@ -93,6 +58,41 @@
             <tag> Scrapy </tag>
             
             <tag> 爬虫 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Kali更新时出现签名无效、Hash和校验不符的问题]]></title>
+      <url>/Linux/Kali/Kali%E6%9B%B4%E6%96%B0%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%95%88%E3%80%81Hash%E5%92%8C%E6%A0%A1%E9%AA%8C%E4%B8%8D%E7%AC%A6%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天在整我虚拟机上的Kali系统，安装东西的时候出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: 有几个软件包无法下载，要不运行 apt-get update 或者加上 --fix-missing 的选项再试试？</span><br></pre></td></tr></table></figure></p>
+<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><p>然后，使用<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>更新的时候，出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误:4 http://mirrors.ustc.edu.cn/kali kali-rolling InRelease</span><br><span class="line">  下列签名无效： EXPKEYSIG ED444FF07D8D0BF6 Kali Linux Repository &lt;devel@kali.org&gt;</span><br><span class="line">已下载 30.5 kB，耗时 1秒 (24.5 kB/s)</span><br><span class="line">正在读取软件包列表... 完成</span><br><span class="line">W: 校验数字签名时出错。此仓库未被更新，所以仍然使用此前的索引文件。GPG 错误：http://mirrors.ustc.edu.cn/kali kali-rolling InRelease: 下列签名无效： EXPKEYSIG ED444FF07D8D0BF6 Kali Linux Repository &lt;devel@kali.org&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后，使用<code>apt-key list</code>查看，发现有个<code>keyring.gpg</code>过期了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg</span><br><span class="line">-----------------------------------------------</span><br><span class="line">pub   rsa4096 2012-03-05 [SC] [expired: 2018-02-02]</span><br><span class="line">      44C6 513A 8E4F B3D3 0875  F758 ED44 4FF0 7D8D 0BF6</span><br><span class="line">uid           [ expired] Kali Linux Repository &lt;devel@kali.org&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>解决方法</strong>：<br>首先使用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb</span><br></pre></td></tr></table></figure></p>
+<p>然后运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ./kali-archive-keyring_2018.1_all.deb</span><br></pre></td></tr></table></figure></p>
+<p>这个问题就解决了</p>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p>但是这个时候再使用<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>，又出现了另一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">E: 无法下载 http://172.17.0.111/cache/7/02/mirrors.ustc.edu.cn/01fbf595fbfd06d37257ada0be178b0b/Sources.gz  Hash 校验和不符</span><br><span class="line">   Hashes of expected file:</span><br><span class="line">    - Filesize:11822681 [weak]</span><br><span class="line">    - SHA256:32a1f422348290dbe259aa9c57ea3c8e9622b4f6e808dcc7694163d3d8622c26</span><br><span class="line">    - SHA1:872723d9ba3977a72101d847ce341c503e681cef [weak]</span><br><span class="line">    - MD5Sum:c4c623d3ec6792e477ef37c62561021a [weak]</span><br><span class="line">   Hashes of received file:</span><br><span class="line">    - SHA256:2ee0958d97d7df9fe0b406f0b18d225125939f0d3699cc3f9b2dd3c948cea941</span><br><span class="line">    - SHA1:fe4abbd5e75606c6ce6df3d87968f32bd16c9027 [weak]</span><br><span class="line">    - MD5Sum:5c7119257cd72146aa5f4d70daf41e4b [weak]</span><br><span class="line">    - Filesize:11702644 [weak]</span><br><span class="line">   Last modification reported: Fri, 26 Jan 2018 00:03:11 +0000</span><br><span class="line">   Release file created at: Sat, 03 Mar 2018 00:03:33 +0000</span><br><span class="line">E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。</span><br></pre></td></tr></table></figure></p>
+<p><strong>解决方法</strong>：<br>这是因为我之前的更新没有顺利结束，有临时文件残留，所以先执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get clean</span><br></pre></td></tr></table></figure></p>
+<p>再执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /var/lib/apt/lists/*</span><br></pre></td></tr></table></figure></p>
+<p>就可以了。</p>
+<p>另外，这个问题也有可能是<strong>网络问题</strong>导致的。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+            <category> Kali </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Kali </tag>
             
         </tags>
         
