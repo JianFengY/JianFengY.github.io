@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://jeffyang.top/MySQL/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-05-18T03:20:05.494Z</lastmod>
+    <data>
+        <display>
+        <title>MySql学习笔记</title>
+        <pubTime>2018-02-07T13:04:00.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://jeffyang.top/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jeffyang.top/Linux/Kali/Kali%E6%9B%B4%E6%96%B0%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%95%88%E3%80%81Hash%E5%92%8C%E6%A0%A1%E9%AA%8C%E4%B8%8D%E7%AC%A6%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2018-03-04T15:44:45.533Z</lastmod>
     <data>
@@ -548,26 +568,6 @@
           
              
               <breadCrumb title="爬虫" url="http://jeffyang.top/categories/Python/%E7%88%AC%E8%99%AB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jeffyang.top/MySQL/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2018-02-10T16:16:44.067Z</lastmod>
-    <data>
-        <display>
-        <title>MySql学习笔记</title>
-        <pubTime>2018-02-07T13:04:00.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="http://jeffyang.top/categories/MySQL/"/>
           
         </display>
     </data>
